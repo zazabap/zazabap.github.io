@@ -11,27 +11,27 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Information and Communication Engineering, Institute of Science Tokyo, 2026 (expected)
+* M.S. in High Energy Physics, The Graduate University for Advanced Studies, SOKENDAI, 2023
+* B.S. in Physics, University of California, San Diego, 2020
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Summer 2024: Research Associate
+  * RIKEN AIP
+  * Duties included: Data Extraction Attack
+  * Supervisor: Prof. Jun Sakuma
 
-* Fall 2015: Research Assistant
-  * Github University
+* Spring 2023: Junior Physicist. CERN, Switzerland
+  * CERN and KEK
+  * Duties includes: Updates and improvements to ATLAS detector
+  * Supervisor: Manabu Togawa, Yu Nakahama
+
+* Spring 2021: Research Assistant
+  * The High Energy Accelerator Research Organization, KEK
   * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+  * Supervisor: Manabu Togawa
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
 Skills
 ======
 * Skill 1
