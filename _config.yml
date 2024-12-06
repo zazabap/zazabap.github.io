@@ -21,7 +21,7 @@ repository               : "zazabap/zazabap.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "cat.png"
   name             : "Shiwen An"
   pronouns         : # URL 
   bio              : "Someone working hard on Quantum Computing and AI security"
