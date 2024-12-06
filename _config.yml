@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Shiwen An / Site Title"
+title                    : "Shiwen An"
 title_separator          : "-"
 name                     : &name "Shiwen An"
 description              : &description "personal description"
@@ -23,10 +23,10 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Shiwen An"
-  pronouns         : "He/Him"  
-  bio              : "A"
+  pronouns         : # URL 
+  bio              : "Someone working hard on Quantum Computing and AI security"
   location         : "Kanagawa, Japan"
-  employer         : "Institute of Science Tokyo & RIKEN AIP"
+  employer         : "Institute of Science Tokyo"
   uri              : # URL
   email            : "an.s.aa@m.titech.ac.jp" 
 
