@@ -11,8 +11,6 @@ citation: 'Overnight Stock Movement Prediction with Contextualized Embedding Inc
 ---
 Junjie H Xu, Shiwen An , Liangcheng Lyu, and Yiming Bai (2022).
 
-[Download slides here](https://ieeexplore.ieee.org/document/10014070)
-
 [Download paper here](https://ieeexplore.ieee.org/document/10014070)
 
 Recommended citation: Overnight Stock Movement Prediction with Contextualized Embedding Incorporating News and Stock
