@@ -14,3 +14,6 @@ I obtained my B.S. in physics from the [University of California, San Diego](htt
 Recent Update
 ======
 Keywords: Quantum Computing Quantum Machine Learning AI security.
+  <ul>{% for post in site.publications reversed %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>

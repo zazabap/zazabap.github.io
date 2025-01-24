@@ -34,7 +34,7 @@ Work experience
 
 Skills
 ======
-* Pennylane, Qiskit and 
+* Contribution to Pennylane library, Qiskit 
 * Machine Learning Related 
   * Database, Docker
   * PyTorch, Tensorflow, Transformer, Huggingface Dataset
