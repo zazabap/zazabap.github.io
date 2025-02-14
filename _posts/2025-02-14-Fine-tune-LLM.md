@@ -1,7 +1,7 @@
 ---
 title: 'Fine-Tuning LLaMA 2 with `torchrun`'
 date: 2025-02-14
-permalink: /posts/2012/08/blog-post-4/
+permalink: /posts/2025/02/fine-tune/
 tags:
   - pyTorch
   - Parallel Computing
