@@ -1,5 +1,5 @@
 ---
-title: 'Future Blog Post'
+title: 'Fine-Tuning LLaMA 2 with `torchrun`'
 date: 2025-02-14
 permalink: /posts/2012/08/blog-post-4/
 tags:
@@ -8,8 +8,6 @@ tags:
   - AI Infrastructure 
   - Fine-tuning
 ---
-Fine-Tuning LLaMA 2 with `torchrun`
-
 Fine-tuning large models like LLaMA 2 is a big task, but with `torchrun`, you can scale it across multiple GPUs with ease. In this post, I’ll walk you through how to do it step by step.
 
 ### What You Need
