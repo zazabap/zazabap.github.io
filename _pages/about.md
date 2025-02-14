@@ -13,7 +13,14 @@ I obtained my B.S. in physics from the [University of California, San Diego](htt
 
 Recent Update
 ======
-Keywords: Quantum Computing Quantum Machine Learning AI security.
+Keywords: Quantum Computing Quantum Machine Learning AI security. 
+
+### AI Security 
+
+The on-going work includes the attack on various fine-tuned and pretrained AI models, like Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek and GPT family Model. Coming soon! 
+
+### Quantum Machine Learning
+Recently, I published research in newly developed feature extraction algorithm on graphs that could be applied with VQCs in limited 
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
