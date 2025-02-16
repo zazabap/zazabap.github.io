@@ -40,12 +40,13 @@ Skills
   * PyTorch, Tensorflow, Transformer, Huggingface Dataset
 * Object Oriented Design 
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+   -->
+   
 <!-- Talks
 ======
   <ul>{% for post in site.talks reversed %}
