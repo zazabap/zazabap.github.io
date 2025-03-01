@@ -9,10 +9,10 @@ tags:
   - python
 ---
 
-## Tensor Train Decomposition
 
 High-dimensional data (tensors) appear in many fields such as scientific computing, quantum physics, and machine learning. However, storing and operating on these tensors is challenging due to the exponential growth of parameters with the number of dimensions (the so-called “curse of dimensionality”). **Tensor Train (TT) decomposition** is one way to represent high-dimensional tensors in a compact format by expressing them as a sequence of smaller 3D tensors (often called **TT-cores**).
-## 2. The Tensor Train Representation
+
+## 1. The Tensor Train Representation
 
 Given an $N$-dimensional tensor  
 $$
@@ -35,7 +35,7 @@ $$
 $$  
 numbers, which is typically much smaller when the TT-ranks are low.
 
-## 3. TT Decomposition via Sequential SVD
+## 2. TT Decomposition via Sequential SVD
 
 One common algorithm to compute the TT decomposition is to use a sequence of **Singular Value Decompositions (SVDs)**. The main idea is to “peel off” one dimension at a time while maintaining a low-rank approximation. Let’s break down the procedure step by step.
 
@@ -103,7 +103,7 @@ $$
 
 ---
 
-## 4. Detailed Code Example in Python
+## 3. Detailed Code Example in Python
 
 Below is an annotated Python implementation of the TT decomposition using NumPy and SciPy. Comments in the code explain each step of the process.
 
@@ -194,7 +194,7 @@ for i, core in enumerate(tt_cores):
 - **Final TT-core:**  
   After processing all but the last mode, the remaining tensor is reshaped into the final core.
 
-## **5. Network Construction**
+## **4. Network Construction**
 
 Assume we have a weight matrix  
 $$
@@ -280,7 +280,7 @@ $$
 which is much smaller when the TT-ranks \(r_k\) are low. This reduction helps in lowering memory consumption and computational costs, and may also have a regularization effect on the model.
 
 
-## **6. How to format the input data and Tensor Train**
+## **5. How to format the input data and Tensor Train**
 
 In Tensor Train–based neural networks, the input is typically provided as a flattened vector that is then "tensorized" (i.e., reshaped) to match the factorization used in the TT-layer. This tensorization aligns the dimensions of the input with those of the TT-cores that represent the weight matrix.
 
