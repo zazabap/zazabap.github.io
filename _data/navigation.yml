@@ -17,10 +17,10 @@ main:
   # - title: "Teaching"
   #   url: /teaching/    
     
-  # - title: "Portfolio"
-  #   url: /portfolio/
-        
   - title: "Projects"
+    url: /portfolio/
+        
+  - title: "Blog"
     url: /year-archive/
     
   # - title: "Holidays"
