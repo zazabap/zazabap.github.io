@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Education"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -8,14 +8,11 @@ redirect_from:
 ---
 
 {% include base_path %}
-
-Education
-======
 * Ph.D in Information and Communication Engineering, Institute of Science Tokyo, 2026 (expected)
 * M.S. in High Energy Physics, The Graduate University for Advanced Studies, SOKENDAI, 2023
 * B.S. in Physics, University of California, San Diego, 2020
 
-Work experience
+Experience
 ======
 * Summer 2024: Research Associate
   * RIKEN AIP
@@ -25,19 +22,21 @@ Work experience
 * Spring 2023: Junior Physicist. CERN, Switzerland
   * CERN and KEK
   * Duties includes: Updates and improvements to ATLAS detector
-  * Supervisor: Manabu Togawa, Yu Nakahama
+  * Supervisor: Prof. Manabu Togawa, Yu Nakahama
 
 * Spring 2021: Research Assistant
   * The High Energy Accelerator Research Organization, KEK
   * Duties included: Merging pull requests
-  * Supervisor: Manabu Togawa
+  * Supervisor: Prof. Manabu Togawa
 
 Skills
 ======
-* Contribution to Pennylane library, Qiskit 
-* Machine Learning Related 
+* Contribution to Pennylane library, Qiskit, CuPy
+* Machine Learning Related tech stack:
   * Database, Docker
-  * PyTorch, Tensorflow, Transformer, Huggingface Dataset
+  * PyTorch, Tensorflow, Transformer, Huggingface Dataset, Accelerator
+* Dev Environment:
+  * Git, VS Code, Cursor
 * Object Oriented Design 
 
 <!-- Publications
