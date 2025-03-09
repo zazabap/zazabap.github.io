@@ -11,10 +11,6 @@ This is an item in your portfolio. It can be have images or nice text. If you na
 ## Project Overview
 
 I developed this modern web crawler application that combines the power of Rust's performance with React's interactive UI capabilities. The project demonstrates my ability to create full-stack applications with robust backends and intuitive frontends while integrating modern web technologies.
-
-![Web Crawler Interface](placeholder_for_screenshot.png)
-*Screenshot: The web crawler interface showing crawl results with color-coded status indicators*
-
 ## Technology Stack
 
 ### Backend
