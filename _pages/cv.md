@@ -15,8 +15,8 @@ redirect_from:
 Experience
 ======
 * Summer 2024: Research Associate
-  * RIKEN AIP
-  * Duties included: Data Extraction Attack
+  * RIKEN Advanced Intelligence Project
+  * Duties included: Data Extraction Attack Research
   * Supervisor: Prof. Jun Sakuma
 
 * Spring 2023: Junior Physicist. CERN, Switzerland
@@ -31,14 +31,14 @@ Experience
 
 Skills
 ======
-* Contribution to Pennylane library, Qiskit, CuPy
+* Python: Contribution to Pennylane library, Qiskit, CuPy
+  * Familarity with PyTorch, Tensorflow, Transformer, Huggingface Dataset, Accelerator
 * Machine Learning Related tech stack:
-  * Database, Docker
-  * PyTorch, Tensorflow, Transformer, Huggingface Dataset, Accelerator
 * Dev Environment:
   * Git, VS Code, Cursor
-* Object Oriented Design 
-
+  * Redis, Docker
+* Familiarity with C++/C# 
+* On-going Project on Rust. 
 <!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
