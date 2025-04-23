@@ -4,33 +4,35 @@ title: "Computer Architecture & Operating Systems"
 permalink: /os/
 ---
 
-# [Computer Architecture & Operating Systems](os/_posts/2024-01-01-introduction-to-computer-architecture.md)
+# Computer Architecture & Operating Systems
 
 Exploring the fundamentals and advanced concepts of computer systems, from silicon to software.
 
-## 📝 Recent Notes
+## 📝 Latest Articles
 
-{% for post in site.categories.os limit:5 %}
-### [{{ post.title }}]({{ post.url }})
-{{ post.excerpt | strip_html | truncatewords: 30 }}
-*{{ post.date | date: "%B %d, %Y" }}*
-{% endfor %}
+### [Introduction to Computer Architecture](/os/2024/01/introduction-to-computer-architecture/)
+A comprehensive overview of computer architecture fundamentals, including CPU design, memory systems, and performance metrics.
+*January 01, 2024*
 
-## 📚 Main Topics
+## 📚 Learning Paths
 
-### 🔧 Computer Architecture
-- ⚡ Processor Design
-- 📊 Memory Hierarchy
-- 💻 Instruction Set Architecture (ISA)
-- 🔄 Pipelining
-- 💾 Cache Organization
+### 🔬 Computer Architecture
+| Topic | Description |
+|-------|-------------|
+| ⚡ Processor Design | CPU components and architecture |
+| 📊 Memory Hierarchy | Cache, main memory, and storage |
+| 💻 ISA | Instruction Set Architecture |
+| 🔄 Pipelining | Instruction pipelining concepts |
+| 💾 Cache Organization | Cache design and optimization |
 
-### 🖥️ Operating Systems
-- ⚙️ Process Management
-- 🧠 Memory Management
-- 📁 File Systems
-- 🔌 I/O Systems
-- 📦 Virtualization
+### 💻 Operating Systems
+| Topic | Description |
+|-------|-------------|
+| ⚙️ Process Management | Process scheduling and control |
+| 🧠 Memory Management | Virtual memory and allocation |
+| 📁 File Systems | File organization and storage |
+| 🔌 I/O Systems | Input/Output management |
+| 📦 Virtualization | System virtualization concepts |
 
 ---
 
