@@ -157,7 +157,6 @@ include:
   - .htaccess
   - _pages
   - files
-  - _includes
   
 exclude:
   - "*.sublime-project"
@@ -186,7 +185,7 @@ exclude:
   - README
   - tmp
   - vendor
-  # - "os"
+  - "os-study"
 keep_files:
   - .git
   - .svn
