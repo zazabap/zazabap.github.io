@@ -7,12 +7,14 @@ url: "https://zazabap.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
-layouts_dir: _layouts
+remote_theme: jekyll/minima
+
+# Directory settings
 include:
   - _layouts
   - _includes
   - assets
+  - _sass
 
 # Collections
 collections:

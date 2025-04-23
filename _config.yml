@@ -153,16 +153,22 @@ analytics:
 
 
 # Reading Files
+# Include OS directory
 include:
   - .htaccess
   - _pages
   - files
-  
+  - os
+
+# Exclude OS specific config
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
+  - os/_config.yml
+  - os/Gemfile
+  - os/Gemfile.lock
   - .github
   - .jekyll-assets-cache
   - .sass-cache
