@@ -10,7 +10,7 @@ Exploring the fundamentals and advanced concepts of computer systems, from silic
 
 ## 📝 Recent Notes
 
-### [Introduction to Computer Architecture](/os/2024/01/introduction-to-computer-architecture/)
+### [Introduction to Computer Architecture](/os/_posts/Intro.md)
 A comprehensive overview of computer architecture fundamentals, including CPU design, memory systems, and performance metrics.
 *January 01, 2024*
 
