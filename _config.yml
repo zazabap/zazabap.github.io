@@ -185,7 +185,7 @@ exclude:
   - README
   - tmp
   - vendor
-  # - "os-study"
+  - "os-study"
 keep_files:
   - .git
   - .svn
