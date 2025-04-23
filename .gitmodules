@@ -1,4 +1,4 @@
-[submodule "os"]
-	path = os
+[submodule "os-study"]
+	path = os-study
 	url = https://github.com/zazabap/os-study.git
 	branch = bootstrap
