@@ -111,3 +111,27 @@ code {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--border-color);
 }
+
+
+/* LaTeX equation styling */
+.MathJax {
+    color: var(--text-color) !important;
+}
+
+.math-block {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--code-bg);
+    border-radius: 8px;
+}
+
+/* Ensure equations are readable in dark mode */
+mjx-container {
+    color: var(--text-color) !important;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+    margin: 1.5rem 0 !important;
+    padding: 0.5rem 0;
+}
