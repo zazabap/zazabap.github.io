@@ -10,6 +10,18 @@ Exploring the fundamentals and advanced concepts of computer systems, from silic
 
 ## 📝 Recent Notes
 
+### [Understanding Memory Hierarchy](/os/2024/01/memory-hierarchy/)
+A deep dive into computer memory organization and performance.
+*January 05, 2024*
+
+### [Process Management in Operating Systems](/os/2024/01/process-management/)
+Exploring process states, scheduling, and management.
+*January 10, 2024*
+
+### [Understanding File Systems](/os/2024/01/file-systems/)
+Overview of file system structures and performance metrics.
+*January 15, 2024*
+
 ### [Introduction to Computer Architecture](/os/_posts/Intro.md)
 A comprehensive overview of computer architecture fundamentals, including CPU design, memory systems, and performance metrics.
 *January 01, 2024*

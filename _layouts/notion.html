@@ -37,7 +37,8 @@
                 <li class="nav-item">
                     <h3>Computer Architecture</h3>
                     <ul>
-                        {% for post in site.categories.computer-architecture %}
+                        {% assign arch_posts = site.posts | where: "categories", "computer-architecture" %}
+                        {% for post in arch_posts %}
                             <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
                         {% endfor %}
                     </ul>
@@ -47,7 +48,8 @@
                 <li class="nav-item">
                     <h3>Operating Systems</h3>
                     <ul>
-                        {% for post in site.categories.os %}
+                        {% assign os_posts = site.posts | where: "categories", "os" %}
+                        {% for post in os_posts %}
                             <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
                         {% endfor %}
                     </ul>
