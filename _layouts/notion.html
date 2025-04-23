@@ -28,18 +28,30 @@
         <nav class="sidebar">
             <h2>Contents</h2>
             <ul class="nav-list">
-                {% assign sorted_categories = site.categories | sort %}
-                {% for category in sorted_categories %}
-                    <li class="nav-item">
-                        <h3>{{ category[0] | capitalize }}</h3>
-                        <ul>
-                            {% assign sorted_posts = category[1] | sort: 'date' | reverse %}
-                            {% for post in sorted_posts %}
-                                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                {% endfor %}
+                <!-- Overview Link -->
+                <li class="nav-item">
+                    <a href="{{ '/os/' | relative_url }}" class="overview-link">Overview</a>
+                </li>
+
+                <!-- Computer Architecture -->
+                <li class="nav-item">
+                    <h3>Computer Architecture</h3>
+                    <ul>
+                        {% for post in site.categories.computer-architecture %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                <!-- Operating Systems -->
+                <li class="nav-item">
+                    <h3>Operating Systems</h3>
+                    <ul>
+                        {% for post in site.categories.os %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
             </ul>
         </nav>
         
