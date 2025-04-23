@@ -7,6 +7,12 @@ url: "https://zazabap.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
+theme: minima
+layouts_dir: _layouts
+include:
+  - _layouts
+  - _includes
+  - assets
 
 # Collections
 collections:
