@@ -58,10 +58,57 @@ body {
   background: var(--hover-bg);
 }
 
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--sidebar-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  background: var(--hover-bg);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+tr:hover {
+  background: var(--hover-bg);
+}
+
+.topic-table {
+  margin: 1.5rem 0;
+}
+
+/* Content layout improvements */
 .content {
   margin-left: 260px;
   padding: 2rem 3rem;
-  max-width: 900px;
+  max-width: 1000px;
+  line-height: 1.8;
+}
+
+.content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+.content h3 {
+  font-size: 1.4rem;
+  color: var(--accent-color);
 }
 
 .page-block {
