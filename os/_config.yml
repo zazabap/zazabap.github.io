@@ -1,0 +1,52 @@
+# Site settings
+title: Computer Architecture & OS Notes
+description: A collection of notes on Computer Architecture and Operating Systems
+baseurl: "/os"
+url: "https://zazabap.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "notion"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "notion"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Category settings
+category_archive:
+  type: liquid
+  path: /categories/
+
+# Sass settings
+sass:
+  style: compressed
+  sass_dir: _sass
