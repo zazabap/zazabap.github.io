@@ -14,7 +14,7 @@ jobs:
     - name: Checkout code (with submodules)
       uses: actions/checkout@v3
       with:
-        submodules: recursive
+        submodules: true
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -28,12 +28,17 @@ jobs:
 
     - name: Run Jupyter Notebook
       run: |
-        jupyter nbconvert --to notebook --execute talkmap.ipynb --output talkmap_out.ipynb
+        jupyter nbconvert --to notebook --execute talkmap.ipynb --output talkmap_out.ipynb # Ensure this output is tracked or adjust path
 
     - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Automated update of talk locations" || echo "No changes to commit"
-        git push
+        # Add specific files that were changed by the notebook
+        git add talkmap_out.ipynb # Or the actual output file path if different
+        # Check if there are staged changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit from scrape talks."
+        else
+          git commit -m "Automated update of talk locations [skip ci]"
+          git push

@@ -1,0 +1,78 @@
+name: Build and Deploy Jekyll Sites
+
+on:
+  push:
+    branches:
+      - main # Or your default branch
+    # Avoid triggering on changes made by scrape_talks.yml if it doesn't use [skip ci]
+    # paths-ignore:
+    #  - 'talkmap_out.ipynb' # Add paths modified by scrape_talks
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true # Checkout submodules
+
+      # --- Setup Ruby and Cache Dependencies (using root Gemfile) ---
+      # Assumes both main site and os-study can use the same Ruby/Jekyll/gems
+      # If os-study needs different gems, this needs adjustment (e.g., separate bundle installs)
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3 # Adjust to your required Ruby version
+          bundler-cache: true # Cache gems based on root Gemfile.lock
+
+      # --- Build Main Site ---
+      - name: Build Main Site
+        run: bundle exec jekyll build -d ./_site --lsi # Build into ./_site
+        env:
+          JEKYLL_ENV: production
+
+      # --- Build os-study Site ---
+      - name: Build os-study Site
+        run: |
+          cd os-study
+          # Build using submodule's config, setting baseurl, outputting to its _site
+          # Ensure os-study/_config.yml does NOT set a baseurl, or override it here
+          bundle exec jekyll build --baseurl /os-study -d ./_site --lsi
+          cd ..
+        env:
+          JEKYLL_ENV: production
+
+      # --- Combine Build Artifacts ---
+      - name: Combine Build Artifacts
+        run: |
+          mkdir -p ./_site/os-study # Ensure target directory exists in main site output
+          # Copy the built os-study site into the correct subfolder of the main site output
+          cp -r ./os-study/_site/* ./_site/os-study/
+
+      # --- Configure and Upload ---
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        # If your main site needs a baseurl, configure it in _config.yml or here
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload the combined site
+          path: ./_site
+
+      # --- Deploy ---
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
