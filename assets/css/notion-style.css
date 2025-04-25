@@ -136,10 +136,11 @@ a {
 /* Update the code block styling section */
 
 /* Code block styling with gradient background */
+/* Code block styling - fixed version */
 pre {
   background: linear-gradient(to right, #1a1a1a, #2d2d2d);
   border-radius: 8px;
-  padding: 1.5rem 1.2rem 1.2rem;
+  padding: 1.2rem;
   margin: 1.5rem 0;
   overflow-x: auto;
   border: 1px solid var(--border-color);
@@ -149,7 +150,7 @@ pre {
 
 /* Code inside pre blocks */
 pre code {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', monospace;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
   font-size: 0.9rem;
   line-height: 1.6;
   color: #f8f8f2;
@@ -161,17 +162,17 @@ pre code {
 }
 
 /* Direct syntax highlighting classes */
-.keyword { color: #ff79c6; font-weight: bold; }
-.string { color: #f1fa8c; }
-.comment { color: #6272a4; font-style: italic; }
-.function { color: #50fa7b; }
-.number { color: #bd93f9; }
-.operator { color: #ff79c6; }
-.class { color: #8be9fd; font-weight: bold; }
-.variable { color: #f8f8f2; }
-.control { color: #ff5555; font-weight: bold; }
-.builtin { color: #8be9fd; font-style: italic; }
-.punctuation { color: #f8f8f2; }
+pre .keyword { color: #ff79c6; font-weight: bold; }
+pre .string { color: #f1fa8c; }
+pre .comment { color: #6272a4; font-style: italic; }
+pre .function { color: #50fa7b; }
+pre .number { color: #bd93f9; }
+pre .operator { color: #ff79c6; }
+pre .class { color: #8be9fd; font-weight: bold; }
+pre .variable { color: #f8f8f2; }
+pre .control { color: #ff5555; font-weight: bold; }
+pre .builtin { color: #8be9fd; font-style: italic; }
+pre .punctuation { color: #f8f8f2; }
 
 /* Fancy language label with gradient */
 pre::before {
@@ -190,28 +191,9 @@ pre::before {
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Line numbers with better styling */
-pre code {
-  counter-reset: line;
-}
-
-pre code > span {
-  display: block;
-  line-height: 1.5rem;
-  position: relative;
-}
-
+/* Remove the problematic line number styling */
 pre code > span:before {
-  counter-increment: line;
-  content: counter(line);
-  display: inline-block;
-  width: 1.5rem;
-  margin-right: 1.5rem;
-  text-align: right;
-  color: #6272a4;
-  opacity: 0.6;
-  position: sticky;
-  left: 0.5rem;
+  display: none;
 }
 
 /* Code block hover effect with animation */
