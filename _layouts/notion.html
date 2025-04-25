@@ -127,8 +127,8 @@
 
                 <!-- Computer Architecture -->
                 <li class="nav-item">
-                    <h3>Computer Architecture</h3>
-                    <ul>
+                    <h3 class="section-title">Computer Architecture</h3>
+                    <ul class="section-list">
                         {% assign arch_posts = site.posts | where_exp: "post", "post.categories contains 'computer-architecture'" | sort: 'date' | reverse %}
                         {% for post in arch_posts %}
                             <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
@@ -138,8 +138,8 @@
 
                 <!-- Operating Systems -->
                 <li class="nav-item">
-                    <h3>Operating Systems</h3>
-                    <ul>
+                    <h3 class="section-title">Operating Systems</h3>
+                    <ul class="section-list">
                         {% assign os_posts = site.posts | where_exp: "post", "post.categories contains 'os'" | sort: 'date' | reverse %}
                         {% for post in os_posts %}
                             {% unless post.categories contains 'computer-architecture' %}
@@ -155,5 +155,68 @@
             {{ content }}
         </main>
     </div>
+
+    <!-- Add this script to handle section toggling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all section titles
+            const sectionTitles = document.querySelectorAll('.section-title');
+            
+            // Add click event to each section title
+            sectionTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    // Toggle the 'collapsed' class on the next sibling (the ul)
+                    const sectionList = this.nextElementSibling;
+                    sectionList.classList.toggle('collapsed');
+                    this.classList.toggle('collapsed');
+                });
+            });
+            
+            // Check if there's a stored state in localStorage
+            const savedState = localStorage.getItem('sidebarState');
+            if (savedState) {
+                const state = JSON.parse(savedState);
+                
+                // Apply saved state to sections
+                sectionTitles.forEach((title, index) => {
+                    if (state[index]) {
+                        title.classList.add('collapsed');
+                        title.nextElementSibling.classList.add('collapsed');
+                    }
+                });
+            }
+            
+            // Save state when sections are toggled
+            function saveState() {
+                const state = Array.from(sectionTitles).map(title => 
+                    title.classList.contains('collapsed')
+                );
+                localStorage.setItem('sidebarState', JSON.stringify(state));
+            }
+            
+            // Add event listener to save state
+            sectionTitles.forEach(title => {
+                title.addEventListener('click', saveState);
+            });
+            
+            // Highlight current page in navigation
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.nav-list a').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                    
+                    // Ensure parent section is expanded
+                    const parentList = link.closest('.section-list');
+                    if (parentList) {
+                        parentList.classList.remove('collapsed');
+                        const parentTitle = parentList.previousElementSibling;
+                        if (parentTitle) {
+                            parentTitle.classList.remove('collapsed');
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
