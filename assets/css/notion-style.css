@@ -283,3 +283,74 @@ mjx-container[jax="CHTML"][display="true"] {
     margin: 1.5rem 0 !important;
     padding: 0.5rem 0;
 }
+
+/* Language-specific styling for code blocks */
+
+/* Python code blocks */
+pre[data-lang="python"] {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  border-left: 4px solid #4d7aff;
+}
+
+pre[data-lang="python"]::before {
+  background: linear-gradient(135deg, #4d7aff, #8c9eff);
+}
+
+pre[data-lang="python"] .keyword { color: #ff79c6; font-weight: bold; }
+pre[data-lang="python"] .builtin { color: #8be9fd; }
+pre[data-lang="python"] .string { color: #f1fa8c; }
+pre[data-lang="python"] .comment { color: #6272a4; font-style: italic; }
+pre[data-lang="python"] .function { color: #50fa7b; }
+pre[data-lang="python"] .number { color: #bd93f9; }
+pre[data-lang="python"] .operator { color: #ff79c6; }
+pre[data-lang="python"] .decorator { color: #f8f8f2; font-style: italic; text-decoration: underline; }
+
+/* C++ code blocks */
+pre[data-lang="cpp"] {
+  background: linear-gradient(to right, #1e1a2e, #2e1e3e);
+  border-left: 4px solid #ff5555;
+}
+
+pre[data-lang="cpp"]::before {
+  background: linear-gradient(135deg, #ff5555, #ff8080);
+}
+
+pre[data-lang="cpp"] .keyword { color: #ff79c6; font-weight: bold; }
+pre[data-lang="cpp"] .string { color: #f1fa8c; }
+pre[data-lang="cpp"] .comment { color: #6272a4; font-style: italic; }
+pre[data-lang="cpp"] .function { color: #50fa7b; }
+pre[data-lang="cpp"] .number { color: #bd93f9; }
+pre[data-lang="cpp"] .operator { color: #ff79c6; }
+pre[data-lang="cpp"] .class { color: #8be9fd; font-weight: bold; }
+pre[data-lang="cpp"] .preprocessor { color: #ff5555; font-style: italic; }
+pre[data-lang="cpp"] .type { color: #8be9fd; }
+pre[data-lang="cpp"] .namespace { color: #50fa7b; text-decoration: underline; }
+
+/* Add subtle line highlight effect on hover */
+pre[data-lang="python"] code span:hover,
+pre[data-lang="cpp"] code span:hover {
+  background: rgba(255, 255, 255, 0.05);
+  display: inline-block;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* Add subtle glow effects for each language */
+pre[data-lang="python"]:hover::after {
+  box-shadow: 0 0 20px rgba(77, 122, 255, 0.3);
+  opacity: 1;
+}
+
+pre[data-lang="cpp"]:hover::after {
+  box-shadow: 0 0 20px rgba(255, 85, 85, 0.3);
+  opacity: 1;
+}
+
+/* Add code block icons */
+pre[data-lang="python"]::before {
+  content: "Python";
+}
+
+pre[data-lang="cpp"]::before {
+  content: "C++";
+}
