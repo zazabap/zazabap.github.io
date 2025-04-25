@@ -354,3 +354,44 @@ pre[data-lang="python"]::before {
 pre[data-lang="cpp"]::before {
   content: "C++";
 }
+
+/* Add these styles for the copy button */
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+  z-index: 2;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+pre:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+}
+
+/* Adjust the existing pre styling to accommodate the button */
+pre {
+  padding-top: 2.5rem;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}

@@ -27,6 +27,36 @@
     <!-- Add this script to the head section -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Add copy buttons to all code blocks
+        document.querySelectorAll('pre').forEach(function(block) {
+          // Create copy button
+          const button = document.createElement('button');
+          button.className = 'copy-button';
+          button.innerHTML = 'Copy';
+          
+          // Add button to code block
+          block.style.position = 'relative';
+          block.appendChild(button);
+          
+          // Add click handler
+          button.addEventListener('click', function() {
+            const code = block.querySelector('code');
+            const text = code.innerText;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(text).then(function() {
+              // Visual feedback
+              button.innerHTML = 'Copied!';
+              setTimeout(function() {
+                button.innerHTML = 'Copy';
+              }, 2000);
+            }).catch(function(err) {
+              console.error('Failed to copy:', err);
+              button.innerHTML = 'Error';
+            });
+          });
+        });
+        
         // Process all code blocks
         document.querySelectorAll('pre code').forEach(function(block) {
           // Get language from class
