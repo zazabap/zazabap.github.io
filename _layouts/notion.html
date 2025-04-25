@@ -131,9 +131,7 @@
                     <ul>
                         {% assign arch_posts = site.posts | where_exp: "post", "post.categories contains 'computer-architecture'" | sort: 'date' | reverse %}
                         {% for post in arch_posts %}
-                            {% unless post.categories contains 'os' %}
-                                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                            {% endunless %}
+                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
