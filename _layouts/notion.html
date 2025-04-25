@@ -129,9 +129,11 @@
                 <li class="nav-item">
                     <h3>Computer Architecture</h3>
                     <ul>
-                        {% assign arch_posts = site.posts | where_exp: "post", "post.categories contains 'computer-architecture' and post.categories.size == 1" | sort: 'date' | reverse %}
+                        {% assign arch_posts = site.posts | where_exp: "post", "post.categories contains 'computer-architecture'" | sort: 'date' | reverse %}
                         {% for post in arch_posts %}
-                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% unless post.categories contains 'os' %}
+                                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% endunless %}
                         {% endfor %}
                     </ul>
                 </li>
@@ -140,9 +142,11 @@
                 <li class="nav-item">
                     <h3>Operating Systems</h3>
                     <ul>
-                        {% assign os_posts = site.posts | where_exp: "post", "post.categories contains 'os' and post.categories.size == 1" | sort: 'date' | reverse %}
+                        {% assign os_posts = site.posts | where_exp: "post", "post.categories contains 'os'" | sort: 'date' | reverse %}
                         {% for post in os_posts %}
-                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% unless post.categories contains 'computer-architecture' %}
+                                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                            {% endunless %}
                         {% endfor %}
                     </ul>
                 </li>
