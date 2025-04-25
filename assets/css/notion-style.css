@@ -135,7 +135,7 @@ a {
 
 /* Add these code block styles to your existing CSS */
 
-/* Code block styling */
+/* Improved code block styling */
 pre {
   background-color: var(--code-bg);
   border-radius: 8px;
@@ -144,13 +144,14 @@ pre {
   overflow-x: auto;
   border: 1px solid var(--border-color);
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Code inside pre blocks */
 pre code {
   font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-color);
   background: transparent;
   padding: 0;
@@ -158,37 +159,71 @@ pre code {
   display: block;
 }
 
-/* Syntax highlighting for various languages */
-.language-cpp .keyword, .language-python .keyword { color: #ff79c6; }
+/* Enhanced syntax highlighting */
+.language-cpp .keyword, .language-python .keyword { color: #ff79c6; font-weight: bold; }
 .language-cpp .string, .language-python .string { color: #f1fa8c; }
-.language-cpp .comment, .language-python .comment { color: #6272a4; }
+.language-cpp .comment, .language-python .comment { color: #6272a4; font-style: italic; }
 .language-cpp .function, .language-python .function { color: #50fa7b; }
 .language-cpp .number, .language-python .number { color: #bd93f9; }
 .language-cpp .operator, .language-python .operator { color: #ff79c6; }
-.language-cpp .class, .language-python .class { color: #8be9fd; }
+.language-cpp .class, .language-python .class { color: #8be9fd; font-weight: bold; }
+.language-cpp .variable, .language-python .variable { color: #f8f8f2; }
+.language-cpp .control, .language-python .control { color: #ff5555; font-weight: bold; }
+.language-cpp .builtin, .language-python .builtin { color: #8be9fd; font-style: italic; }
+.language-cpp .punctuation, .language-python .punctuation { color: #f8f8f2; }
 
-/* Language label for code blocks */
+/* Fancy language label for code blocks */
 pre::before {
   content: attr(data-lang);
   position: absolute;
   top: 0;
-  right: 1rem;
+  right: 0;
   font-size: 0.8rem;
+  color: var(--bg-color);
+  background: var(--accent-color);
+  padding: 0.2rem 0.8rem;
+  border-bottom-left-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Line numbers for code blocks */
+pre {
+  counter-reset: line;
+}
+
+pre code {
+  counter-increment: line;
+}
+
+pre code::before {
+  content: counter(line);
+  display: inline-block;
+  width: 1.5em;
+  margin-right: 1em;
+  padding-right: 0.5em;
   color: #6272a4;
-  background: var(--hover-bg);
-  padding: 0.2rem 0.5rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-right: 1px solid var(--border-color);
+  text-align: right;
+}
+
+/* Code block hover effect */
+pre:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 /* Improve inline code appearance */
 :not(pre) > code {
-  color: #ff79c6;
-  background-color: var(--code-bg);
+  color: var(--accent-color);
+  background-color: rgba(255, 107, 107, 0.1);
   padding: 0.2em 0.4em;
   border-radius: 3px;
   font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
   font-size: 0.85em;
+  border: 1px solid rgba(255, 107, 107, 0.2);
 }
 
 .date-tag {
