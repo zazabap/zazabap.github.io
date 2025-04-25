@@ -22,6 +22,30 @@
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
+    
+    <!-- Syntax highlighting -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add language labels to code blocks
+            document.querySelectorAll('pre code').forEach(function(block) {
+                const language = block.className.match(/language-(\w+)/);
+                if (language) {
+                    block.parentElement.setAttribute('data-lang', language[1]);
+                }
+                
+                // Basic syntax highlighting for common elements
+                const code = block.innerHTML;
+                
+                // Highlight comments
+                block.innerHTML = code
+                    .replace(/\/\/(.*?)$/gm, '<span class="comment">//$1</span>')
+                    .replace(/\/\*([\s\S]*?)\*\//g, '<span class="comment">/*$1*/</span>')
+                    .replace(/#(.*?)$/gm, '<span class="comment">#$1</span>');
+                
+                // Add more syntax highlighting as needed
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
