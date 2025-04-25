@@ -129,7 +129,7 @@
                 <li class="nav-item">
                     <h3>Computer Architecture</h3>
                     <ul>
-                        {% assign arch_posts = site.posts | where: "categories", "computer-architecture" %}
+                        {% assign arch_posts = site.posts | where: "categories", "computer-architecture" | sort: 'date' | reverse %}
                         {% for post in arch_posts %}
                             <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
                         {% endfor %}
@@ -140,7 +140,7 @@
                 <li class="nav-item">
                     <h3>Operating Systems</h3>
                     <ul>
-                        {% assign os_posts = site.posts | where: "categories", "os" %}
+                        {% assign os_posts = site.posts | where: "categories", "os" | sort: 'date' | reverse %}
                         {% for post in os_posts %}
                             <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
                         {% endfor %}

@@ -2,7 +2,7 @@
 layout: notion
 title: 'Introduction to Computer Architecture'
 date: 2024-01-01
-categories: [os, computer-architecture]
+categories: [computer-architecture]
 tags: [fundamentals, cpu, memory]
 ---
 
