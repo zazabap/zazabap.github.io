@@ -6,7 +6,7 @@
     <title>{{ page.title }} | Computer Architecture Notes</title>
     <link rel="stylesheet" href="{{ '/assets/css/notion-style.css' | relative_url }}">
     
-    <!-- MathJax Configuration -->
+    <!-- MathJax Configuration remains unchanged -->
     <script>
         MathJax = {
             tex: {
@@ -23,8 +23,7 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
     
-    <!-- Improved Syntax highlighting script -->
-    <!-- Add this script to the head section -->
+    <!-- Enhanced Syntax highlighting script -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         // Process all code blocks
@@ -34,54 +33,94 @@
           if (langMatch) {
             const lang = langMatch[1];
             block.parentElement.setAttribute('data-lang', lang);
-          }
-          
-          // Simple syntax highlighting for Python
-          if (block.classList.contains('language-python')) {
-            let html = block.innerHTML;
             
-            // Replace keywords
-            const keywords = ['def', 'if', 'else', 'for', 'while', 'in', 'return', 'import', 'class', 'True', 'False', 'None'];
-            keywords.forEach(keyword => {
-              const regex = new RegExp(`\\b${keyword}\\b`, 'g');
-              html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
-            });
-            
-            // Replace comments
-            html = html.replace(/(#.*)$/gm, '<span class="comment">$1</span>');
-            
-            // Replace strings
-            html = html.replace(/(['"])(?:(?=(\\?))\2.)*?\1/g, '<span class="string">$&</span>');
-            
-            // Replace numbers
-            html = html.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
-            
-            block.innerHTML = html;
-          }
-          
-          // Simple syntax highlighting for C++
-          if (block.classList.contains('language-cpp')) {
-            let html = block.innerHTML;
-            
-            // Replace keywords
-            const keywords = ['if', 'else', 'for', 'while', 'class', 'struct', 'return', 'public', 'private', 'protected', 'int', 'bool', 'void', 'char', 'float', 'double', 'true', 'false', 'new', 'delete'];
-            keywords.forEach(keyword => {
-              const regex = new RegExp(`\\b${keyword}\\b`, 'g');
-              html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
-            });
-            
-            // Replace comments
-            html = html.replace(/\/\/(.*?)$/gm, '<span class="comment">//$1</span>');
-            
-            // Replace strings
-            html = html.replace(/(['"])(?:(?=(\\?))\2.)*?\1/g, '<span class="string">$&</span>');
-            
-            // Replace numbers
-            html = html.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
-            
-            block.innerHTML = html;
+            // Apply language-specific highlighting
+            if (lang === 'python') {
+              highlightPython(block);
+            } else if (lang === 'cpp') {
+              highlightCpp(block);
+            }
           }
         });
+        
+        // Python syntax highlighting
+        function highlightPython(block) {
+          let html = block.innerHTML;
+          
+          // Keywords
+          const keywords = ['def', 'if', 'else', 'elif', 'for', 'while', 'in', 'return', 'import', 
+                           'from', 'as', 'class', 'try', 'except', 'finally', 'with', 'not', 'and', 
+                           'or', 'True', 'False', 'None', 'lambda', 'global', 'nonlocal'];
+          
+          keywords.forEach(keyword => {
+            const regex = new RegExp(`\\b${keyword}\\b`, 'g');
+            html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
+          });
+          
+          // Comments
+          html = html.replace(/(#.*)$/gm, '<span class="comment">$1</span>');
+          
+          // Strings
+          html = html.replace(/(['"])(?:(?=(\\?))\2.)*?\1/g, '<span class="string">$&</span>');
+          
+          // Numbers
+          html = html.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="number">$1</span>');
+          
+          // Function definitions
+          html = html.replace(/\b(def\s+)([a-zA-Z_][a-zA-Z0-9_]*)/g, '$1<span class="function">$2</span>');
+          
+          // Built-in functions
+          const builtins = ['print', 'len', 'range', 'str', 'int', 'float', 'list', 'dict', 'set', 'tuple'];
+          builtins.forEach(builtin => {
+            const regex = new RegExp(`\\b(${builtin})\\b(?=\\s*\\()`, 'g');
+            html = html.replace(regex, `<span class="builtin">$1</span>`);
+          });
+          
+          block.innerHTML = html;
+        }
+        
+        // C++ syntax highlighting
+        function highlightCpp(block) {
+          let html = block.innerHTML;
+          
+          // Keywords
+          const keywords = ['if', 'else', 'for', 'while', 'do', 'switch', 'case', 'default', 
+                           'break', 'continue', 'return', 'class', 'struct', 'enum', 'union', 
+                           'typedef', 'static', 'const', 'public', 'private', 'protected', 
+                           'new', 'delete', 'this', 'sizeof', 'true', 'false', 'nullptr'];
+          
+          keywords.forEach(keyword => {
+            const regex = new RegExp(`\\b${keyword}\\b`, 'g');
+            html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
+          });
+          
+          // Types
+          const types = ['void', 'int', 'char', 'bool', 'float', 'double', 'unsigned', 'signed', 
+                        'long', 'short', 'auto', 'string', 'vector', 'map', 'set'];
+          
+          types.forEach(type => {
+            const regex = new RegExp(`\\b${type}\\b`, 'g');
+            html = html.replace(regex, `<span class="type">${type}</span>`);
+          });
+          
+          // Comments
+          html = html.replace(/\/\/(.*?)$/gm, '<span class="comment">//$1</span>');
+          html = html.replace(/\/\*([\s\S]*?)\*\//g, '<span class="comment">/*$1*/</span>');
+          
+          // Strings
+          html = html.replace(/(['"])(?:(?=(\\?))\2.)*?\1/g, '<span class="string">$&</span>');
+          
+          // Numbers
+          html = html.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="number">$1</span>');
+          
+          // Preprocessor directives
+          html = html.replace(/(#\w+)\b/g, '<span class="preprocessor">$1</span>');
+          
+          // Function definitions
+          html = html.replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\(/g, '<span class="function">$1</span>(');
+          
+          block.innerHTML = html;
+        }
       });
     </script>
 </head>

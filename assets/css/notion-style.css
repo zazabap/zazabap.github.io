@@ -137,6 +137,7 @@ a {
 
 /* Code block styling with gradient background */
 /* Code block styling - fixed version */
+/* Enhanced code block styling */
 pre {
   background: linear-gradient(to right, #1a1a1a, #2d2d2d);
   border-radius: 8px;
@@ -146,11 +147,12 @@ pre {
   border: 1px solid var(--border-color);
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 /* Code inside pre blocks */
 pre code {
-  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', monospace;
   font-size: 0.9rem;
   line-height: 1.6;
   color: #f8f8f2;
@@ -161,18 +163,22 @@ pre code {
   tab-size: 2;
 }
 
-/* Direct syntax highlighting classes */
-pre .keyword { color: #ff79c6; font-weight: bold; }
-pre .string { color: #f1fa8c; }
-pre .comment { color: #6272a4; font-style: italic; }
-pre .function { color: #50fa7b; }
-pre .number { color: #bd93f9; }
-pre .operator { color: #ff79c6; }
-pre .class { color: #8be9fd; font-weight: bold; }
-pre .variable { color: #f8f8f2; }
-pre .control { color: #ff5555; font-weight: bold; }
-pre .builtin { color: #8be9fd; font-style: italic; }
-pre .punctuation { color: #f8f8f2; }
+/* Direct syntax highlighting classes with !important to ensure they apply */
+.keyword { color: #ff79c6 !important; font-weight: bold !important; }
+.string { color: #f1fa8c !important; }
+.comment { color: #6272a4 !important; font-style: italic !important; }
+.function { color: #50fa7b !important; }
+.number { color: #bd93f9 !important; }
+.operator { color: #ff79c6 !important; }
+.class { color: #8be9fd !important; font-weight: bold !important; }
+.variable { color: #f8f8f2 !important; }
+.control { color: #ff5555 !important; font-weight: bold !important; }
+.builtin { color: #8be9fd !important; font-style: italic !important; }
+.punctuation { color: #f8f8f2 !important; }
+.type { color: #8be9fd !important; }
+.preprocessor { color: #ff5555 !important; font-style: italic !important; }
+.namespace { color: #50fa7b !important; text-decoration: underline !important; }
+.decorator { color: #f8f8f2 !important; font-style: italic !important; text-decoration: underline !important; }
 
 /* Fancy language label with gradient */
 pre::before {
@@ -191,32 +197,11 @@ pre::before {
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Remove the problematic line number styling */
-pre code > span:before {
-  display: none;
-}
-
 /* Code block hover effect with animation */
-pre {
-  transition: all 0.3s ease;
-}
-
 pre:hover {
   border-color: var(--accent-color);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
-}
-
-/* Improve inline code appearance */
-:not(pre) > code {
-  color: var(--accent-color);
-  background-color: rgba(255, 107, 107, 0.1);
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', monospace;
-  font-size: 0.85em;
-  border: 1px solid rgba(255, 107, 107, 0.2);
-  white-space: nowrap;
 }
 
 /* Add a subtle glow effect to code blocks */
@@ -241,51 +226,6 @@ pre:hover::after {
   opacity: 1;
 }
 
-.date-tag {
-  color: #888;
-  font-size: 0.9rem;
-}
-
-.topic-section {
-  margin-top: 2rem;
-}
-
-.topic-list {
-  list-style: none;
-  padding: 0;
-}
-
-.topic-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-
-/* LaTeX equation styling */
-.MathJax {
-    color: var(--text-color) !important;
-}
-
-.math-block {
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    padding: 1rem;
-    background: var(--code-bg);
-    border-radius: 8px;
-}
-
-/* Ensure equations are readable in dark mode */
-mjx-container {
-    color: var(--text-color) !important;
-}
-
-mjx-container[jax="CHTML"][display="true"] {
-    margin: 1.5rem 0 !important;
-    padding: 0.5rem 0;
-}
-
-/* Language-specific styling for code blocks */
-
 /* Python code blocks */
 pre[data-lang="python"] {
   background: linear-gradient(to right, #1a1a2e, #16213e);
@@ -294,16 +234,8 @@ pre[data-lang="python"] {
 
 pre[data-lang="python"]::before {
   background: linear-gradient(135deg, #4d7aff, #8c9eff);
+  content: "Python";
 }
-
-pre[data-lang="python"] .keyword { color: #ff79c6; font-weight: bold; }
-pre[data-lang="python"] .builtin { color: #8be9fd; }
-pre[data-lang="python"] .string { color: #f1fa8c; }
-pre[data-lang="python"] .comment { color: #6272a4; font-style: italic; }
-pre[data-lang="python"] .function { color: #50fa7b; }
-pre[data-lang="python"] .number { color: #bd93f9; }
-pre[data-lang="python"] .operator { color: #ff79c6; }
-pre[data-lang="python"] .decorator { color: #f8f8f2; font-style: italic; text-decoration: underline; }
 
 /* C++ code blocks */
 pre[data-lang="cpp"] {
@@ -313,26 +245,7 @@ pre[data-lang="cpp"] {
 
 pre[data-lang="cpp"]::before {
   background: linear-gradient(135deg, #ff5555, #ff8080);
-}
-
-pre[data-lang="cpp"] .keyword { color: #ff79c6; font-weight: bold; }
-pre[data-lang="cpp"] .string { color: #f1fa8c; }
-pre[data-lang="cpp"] .comment { color: #6272a4; font-style: italic; }
-pre[data-lang="cpp"] .function { color: #50fa7b; }
-pre[data-lang="cpp"] .number { color: #bd93f9; }
-pre[data-lang="cpp"] .operator { color: #ff79c6; }
-pre[data-lang="cpp"] .class { color: #8be9fd; font-weight: bold; }
-pre[data-lang="cpp"] .preprocessor { color: #ff5555; font-style: italic; }
-pre[data-lang="cpp"] .type { color: #8be9fd; }
-pre[data-lang="cpp"] .namespace { color: #50fa7b; text-decoration: underline; }
-
-/* Add subtle line highlight effect on hover */
-pre[data-lang="python"] code span:hover,
-pre[data-lang="cpp"] code span:hover {
-  background: rgba(255, 255, 255, 0.05);
-  display: inline-block;
-  width: 100%;
-  border-radius: 2px;
+  content: "C++";
 }
 
 /* Add subtle glow effects for each language */
@@ -344,6 +257,18 @@ pre[data-lang="python"]:hover::after {
 pre[data-lang="cpp"]:hover::after {
   box-shadow: 0 0 20px rgba(255, 85, 85, 0.3);
   opacity: 1;
+}
+
+/* Line highlight effect */
+pre code span {
+  display: inline-block;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+pre code span:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
 }
 
 /* Add code block icons */
