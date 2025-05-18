@@ -395,3 +395,19 @@ pre {
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Hide both horizontal and vertical scrollbars in code blocks */
+pre, pre code {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Webkit browsers */
+pre::-webkit-scrollbar,
+pre code::-webkit-scrollbar {
+  display: none !important;
+}
