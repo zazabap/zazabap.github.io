@@ -1,0 +1,60 @@
+# Site settings
+title: Competitive Programming Practice
+description: A collection of notes on Competitive Programming
+baseurl: "/algo"
+url: "https://zazabap.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+remote_theme: jekyll/minima
+
+# Directory settings
+include:
+  - _layouts
+  - _includes
+  - assets
+  - _sass
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "notion"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "notion"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Category settings
+category_archive:
+  type: liquid
+  path: /categories/
+
+# Sass settings
+sass:
+  style: compressed
+  sass_dir: _sass
