@@ -1,5 +1,5 @@
 ---
-layout: notion
+layout: notion-dp
 title: 'Tree Shape Dynamic Programming'
 date: 2025-05-18
 categories: [dp]

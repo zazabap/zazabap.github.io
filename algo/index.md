@@ -1,5 +1,5 @@
 ---
-layout: notion
+layout: notion-dp
 title: "Competitive Programming"
 permalink: /algo/
 ---

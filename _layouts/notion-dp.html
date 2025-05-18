@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Computer Architecture Notes</title>
+    <link rel="stylesheet" href="{{ '/assets/css/notion-style.css' | relative_url }}">
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    
+    <!-- Improved Syntax highlighting script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add copy buttons to all code blocks
+        document.querySelectorAll('pre').forEach(function(block) {
+          const button = document.createElement('button');
+          button.className = 'copy-button';
+          button.innerHTML = 'Copy';
+          block.style.position = 'relative';
+          block.appendChild(button);
+          button.addEventListener('click', function() {
+            const code = block.querySelector('code');
+            const text = code.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+              button.innerHTML = 'Copied!';
+              setTimeout(function() {
+                button.innerHTML = 'Copy';
+              }, 2000);
+            }).catch(function(err) {
+              console.error('Failed to copy:', err);
+              button.innerHTML = 'Error';
+            });
+          });
+        });
+        document.querySelectorAll('pre code').forEach(function(block) {
+          const langMatch = block.className.match(/language-(\w+)/);
+          if (langMatch) {
+            const lang = langMatch[1];
+            block.parentElement.setAttribute('data-lang', lang);
+          }
+          if (block.classList.contains('language-python')) {
+            let html = block.innerHTML;
+            const keywords = ['def', 'if', 'else', 'for', 'while', 'in', 'return', 'import', 'class', 'True', 'False', 'None'];
+            keywords.forEach(keyword => {
+              const regex = new RegExp(`\\b${keyword}\\b`, 'g');
+              html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
+            });
+            html = html.replace(/(#.*)$/gm, '<span class="comment">$1</span>');
+            html = html.replace(/(['"])(?:(?=(\\?))\2.)*?\1/g, '<span class="string">$&</span>');
+            html = html.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
+            block.innerHTML = html;
+          }
+          if (block.classList.contains('language-cpp')) {
+            let html = block.innerHTML;
+            const keywords = ['if', 'else', 'for', 'while', 'class', 'struct', 'return', 'public', 'private', 'protected', 'int', 'bool', 'void', 'char', 'float', 'double', 'true', 'false', 'new', 'delete'];
+            keywords.forEach(keyword => {
+              const regex = new RegExp(`\\b${keyword}\\b`, 'g');
+              html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
+            });
+            html = html.replace(/\/\/(.*?)$/gm, '<span class="comment">//$1</span>');
+            html = html.replace(/(['"])(?:(?=(\\?))\2.)*?\1/g, '<span class="string">$&</span>');
+            html = html.replace(/\b(\d+)\b/g, '<span class="number">$1</span>');
+            block.innerHTML = html;
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <main class="content">
+            {{ content }}
+        </main>
+    </div>
+</body>
+</html>

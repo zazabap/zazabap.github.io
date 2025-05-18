@@ -1,5 +1,5 @@
 ---
-layout: notion
+layout: notion-dp
 title: 'Finite State Machine Dynamic Programming'
 date: 2025-05-18
 categories: [dp]

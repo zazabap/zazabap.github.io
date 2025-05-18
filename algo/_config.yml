@@ -28,12 +28,12 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "notion"
+      layout: "notion-dp"
   - scope:
       path: ""
       type: "pages"
     values:
-      layout: "notion"
+      layout: "notion-dp"
 
 # Exclude from processing
 exclude:
