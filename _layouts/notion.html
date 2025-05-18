@@ -125,29 +125,25 @@
                     <a href="{{ '/os/' | relative_url }}" class="overview-link">Overview</a>
                 </li>
 
-                <!-- Computer Architecture -->
-                <li class="nav-item">
-                    <h3 class="section-title">Computer Architecture</h3>
-                    <ul class="section-list">
-                        {% assign arch_posts = site.posts | where_exp: "post", "post.categories contains 'computer-architecture'" | sort: 'date' | reverse %}
-                        {% for post in arch_posts %}
-                            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </li>
-
-                <!-- Operating Systems -->
-                <li class="nav-item">
-                    <h3 class="section-title">Operating Systems</h3>
-                    <ul class="section-list">
-                        {% assign os_posts = site.posts | where_exp: "post", "post.categories contains 'os'" | sort: 'date' | reverse %}
-                        {% for post in os_posts %}
-                            {% unless post.categories contains 'computer-architecture' %}
-                                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                            {% endunless %}
-                        {% endfor %}
-                    </ul>
-                </li>
+                <!-- Dynamic Section Rendering -->
+                {% assign sections = 
+                    "Computer Architecture:computer-architecture,Operating Systems:os,Algorithms:algo,Dynamic Programming:dp" | split: "," %}
+                {% for section in sections %}
+                    {% assign pair = section | split: ":" %}
+                    {% assign section_title = pair[0] %}
+                    {% assign section_cat = pair[1] %}
+                    <li class="nav-item">
+                        <h3 class="section-title">{{ section_title }}</h3>
+                        <ul class="section-list">
+                            {% assign posts = site.posts | where_exp: "post", "post.categories contains section_cat" | sort: 'date' | reverse %}
+                            {% for post in posts %}
+                                {% if section_cat != "computer-architecture" or post.categories contains "computer-architecture" %}
+                                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
             </ul>
         </nav>
         
