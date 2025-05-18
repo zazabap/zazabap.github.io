@@ -159,6 +159,7 @@ include:
   - _pages
   - files
   - os
+  - algo
 
 # Exclude OS specific config
 exclude:
