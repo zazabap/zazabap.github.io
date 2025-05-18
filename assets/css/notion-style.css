@@ -142,7 +142,7 @@ pre {
   border-radius: 8px;
   padding: 1.2rem;
   margin: 1.5rem 0;
-  overflow-x: auto;
+  overflow-x: hidden !important;
   border: 1px solid var(--border-color);
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -390,7 +390,7 @@ pre {
   padding-top: 2.5rem;
   padding: 1.2rem;
   margin: 1.5rem 0;
-  overflow-x: auto;
+  overflow-x: hidden !important;
   border: 1px solid var(--border-color);
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
