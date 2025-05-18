@@ -14,17 +14,15 @@ main:
   - title: "CV"
     url: /cv/
 
+  - title: "Projects"
+    url: /portfolio/
   # - title: "Teaching"
   #   url: /teaching/    
     
-  - title: "Projects"
-    url: /portfolio/
+
         
-  - title: "Blog"
-    url: /year-archive/
-    
-  # - title: "Holidays"
-  #   url: /IloveU/
+  # - title: "Blog"
+  #   url: /year-archive/
   
   # - title: "Guide"
   #   url: /markdown/
