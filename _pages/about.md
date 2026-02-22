@@ -33,10 +33,6 @@ I am a Ph.D. candidate at [Institute of Science Tokyo](https://www.isct.ac.jp/en
 
 I obtained my B.S. in Physics from the [University of California, San Diego](http://ucsd.edu) and M.S. in Experimental Particle Physics from [KEK](https://atlas.kek.jp/main/news/index.html)
 
-### AI Security
-
-My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.
-
 ### Quantum Software Development
 
 `LogosQ` is a quantum computing library written in Rust. The library focuses on efficient quantum circuit simulation and optimization. For more information, tutorials, and documentation, please visit [https://logosqbook.vercel.app/](https://logosqbook.vercel.app/). If you are interested in optimization and computation in Rust, feel free to check it out!
@@ -44,3 +40,7 @@ My ongoing work includes security analysis and attacks on various fine-tuned and
 ### Quantum Machine Learning
 
 I have recently published research on novel feature extraction algorithms for graphs that can be effectively applied with Variational Quantum Circuits (VQCs) in resource-limited settings. This work bridges classical graph theory with quantum machine learning techniques.
+
+### AI Security
+
+My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.

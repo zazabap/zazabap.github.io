@@ -1,81 +1,74 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: ParametricDFT.jl
+description: Learning parametric quantum Fourier transforms via Riemannian optimization on manifolds
+img: assets/img/projects/comparison_3x3.png
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+[ParametricDFT.jl](https://github.com/nzy1997/ParametricDFT.jl) is a Julia package for learning **parametric quantum Fourier transforms** using manifold optimization. It implements a variational approach to approximate the Discrete Fourier Transform (DFT) using parameterized quantum circuits, with applications to **image compression** and **signal processing**.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The core idea: optimize quantum circuit parameters on Riemannian manifolds (products of U(2) and U(1) groups) to learn frequency-domain representations that are more compressible than the standard DFT.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## Circuit Architectures
+
+The package supports three parametric circuit designs:
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/comparison_3x3.png" title="Standard vs Entangled QFT" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Comparison of Standard 2D QFT and Entangled QFT architectures for a 3×3 system. The entangled variant adds learnable cross-dimensional gates (red) that couple row and column qubits.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+- **Standard QFT Basis** — Full quantum Fourier transform circuit with Hadamard and controlled-phase gates
+- **Entangled QFT Basis** — QFT with additional learnable 2-qubit entanglement gates between row and column qubits
+- **TEBD Basis** — Time-Evolving Block Decimation with ring topology for 2D separable transforms
 
-{% raw %}
+---
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+## Training & Optimization
 
-{% endraw %}
+The package provides Riemannian optimization on the unitary group, with support for multiple solvers:
+
+- Riemannian Gradient Descent
+- Riemannian Conjugate Gradient
+- Riemannian L-BFGS
+- Riemannian Adam
+
+All optimizers support both **CPU and GPU** execution via a custom CUDA-compatible backend.
+
+---
+
+## GPU Acceleration
+
+A key contribution is GPU-accelerated Riemannian optimization that bypasses limitations of existing manifold optimization libraries. Batched operations on (2,2,n) tensor arrays minimize kernel launches for significant speedups at scale.
+
+---
+
+## Key Dependencies
+
+| Package                                                        | Role                             |
+| -------------------------------------------------------------- | -------------------------------- |
+| [Yao.jl](https://github.com/QuantumBFS/Yao.jl)                 | Quantum circuit construction     |
+| [OMEinsum.jl](https://github.com/under-Peter/OMEinsum.jl)      | Tensor network contractions      |
+| [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl) | Riemannian geometry abstractions |
+| [Manopt.jl](https://github.com/JuliaManifolds/Manopt.jl)       | Riemannian optimization solvers  |
+| [Zygote.jl](https://github.com/FluxML/Zygote.jl)               | Automatic differentiation        |
+| [CUDA.jl](https://github.com/JuliaGPU/CUDA.jl)                 | GPU acceleration                 |
+
+---
+
+## Links
+
+- **Source code:** [github.com/nzy1997/ParametricDFT.jl](https://github.com/nzy1997/ParametricDFT.jl)
+- **Documentation:** [ParametricDFT.jl docs](https://nzy1997.github.io/ParametricDFT.jl/dev/)
+- **Theory notes:** Available in the repository under `note/`
