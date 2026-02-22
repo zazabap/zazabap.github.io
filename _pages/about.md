@@ -27,8 +27,20 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+## Biography
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I am a Ph.D. candidate at [Institute of Science Tokyo](https://www.isct.ac.jp/en) (formerly Tokyo Institute of Technology), where I am supervised by [Prof. Konstantinos Slavakis](http://www.slavakislab.ict.e.titech.ac.jp/) and advised by [Prof. Jun Sakuma](https://www.riken.jp/en/research/labs/aip/ai_soc/ai_sec_privacy/index.html). My research focuses on the intersection of quantum computing, machine learning, and AI security.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I obtained my B.S. in Physics from the [University of California, San Diego](http://ucsd.edu) and M.S. in Experimental Particle Physics from [KEK](https://atlas.kek.jp/main/news/index.html)
+
+### AI Security
+
+My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.
+
+### Quantum Software Development
+
+`LogosQ` is a quantum computing library written in Rust. The library focuses on efficient quantum circuit simulation and optimization. For more information, tutorials, and documentation, please visit [https://logosqbook.vercel.app/](https://logosqbook.vercel.app/). If you are interested in optimization and computation in Rust, feel free to check it out!
+
+### Quantum Machine Learning
+
+I have recently published research on novel feature extraction algorithms for graphs that can be effectively applied with Variational Quantum Circuits (VQCs) in resource-limited settings. This work bridges classical graph theory with quantum machine learning techniques.
