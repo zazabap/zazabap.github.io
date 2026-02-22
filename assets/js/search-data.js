@@ -60,8 +60,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-please-check-the-work-at-prof-jinguo-liu-s-group-if-you-are-interested-in-quantum-computing-in-general",
-          title: 'Please check the work at Prof. Jinguo Liu’s group if you are interested...',
+            },},{id: "news-i-will-be-exchanged-at-hkust-guangzhou-campus-from-jan-mar-2026-please-check-the-work-at-prof-jinguo-liu-s-group-for-tensor-network-related-topics-and-research",
+          title: 'I will be exchanged at HKUST guangzhou campus from Jan.-Mar. 2026. Please check...',
           description: "",
           section: "News",},{id: "projects-parametricdft-jl",
           title: 'ParametricDFT.jl',
