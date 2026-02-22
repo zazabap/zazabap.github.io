@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
         },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
         
           title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
@@ -57,20 +50,22 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+            },},{id: "news-the-paper-on-graph-encoding-with-variational-quantum-circuit-is-accepted-by-ieee-qcnc-2025-in-nara-japan",
+          title: 'The paper on graph encoding with variational quantum circuit is accepted by IEEE...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_1/";
+            },},{id: "news-the-official-paper-on-the-logosq-is-published-on-arxiv",
+          title: 'The official paper on the LogosQ is published on Arxiv',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-please-check-the-work-at-prof-jinguo-liu-s-group-if-you-are-interested-in-quantum-computing-in-general",
+          title: 'Please check the work at Prof. Jinguo Liu’s group if you are interested...',
           description: "",
-          section: "News",},{id: "news-the-paper-on-graph-encoding-with-variational-quantum-circuit-is-accepted-by-ieee-qcnc-2025-in-nara-japan",
-          title: 'The paper on graph encoding with variational quantum circuit is accepted by IEEE...',
-          description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-parametricdft-jl",
+          title: 'ParametricDFT.jl',
+          description: "Learning parametric quantum Fourier transforms via Riemannian optimization on manifolds",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "teachings-data-science-fundamentals",
@@ -95,21 +90,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%73%77%65%79%6E%61%6E@%69%63%6C%6F%75%64.%63%6F%6D", "_blank");
-        },
-      },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://inspirehep.net/authors/", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
+          window.open("mailto:%61%6E.%73.%61%61@%6D.%74%69%74%65%63%68.%61%63.%6A%70", "_blank");
         },
       },{
         id: 'social-scholar',
@@ -117,13 +98,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=RVarZsQAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
         },
       },{
       id: 'light-theme',
