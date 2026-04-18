@@ -63,11 +63,21 @@ ninja.data = [{
             },},{id: "news-i-will-be-exchanged-at-hkust-guangzhou-campus-from-jan-mar-2026-please-check-the-work-at-prof-jinguo-liu-s-group-for-tensor-network-related-topics-and-research",
           title: 'I will be exchanged at HKUST guangzhou campus from Jan.-Mar. 2026. Please check...',
           description: "",
-          section: "News",},{id: "projects-parametricdft-jl",
+          section: "News",},{id: "news-new-preprint-quot-problem-reductions-at-scale-quot-is-on-arxiv-with-the-problem-reductions-rust-library-released-on-github",
+          title: 'New preprint — &amp;quot;Problem Reductions at Scale&amp;quot; is on arXiv, with the problem-reductions...',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_4/";
+            },},{id: "projects-parametricdft-jl",
           title: 'ParametricDFT.jl',
           description: "Learning parametric quantum Fourier transforms via Riemannian optimization on manifolds",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
+            },},{id: "projects-problem-reductions",
+          title: 'Problem Reductions',
+          description: "A Rust library and CLI (pred) for NP-hard problem definitions, reductions, and routing across solvers",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
