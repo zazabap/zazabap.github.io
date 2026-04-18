@@ -56,11 +56,11 @@ Quality-detection tools flag isolated or unreachable problems so coverage can be
 
 ## Inspirations
 
-| Package                                                                      | Ecosystem |
-| ---------------------------------------------------------------------------- | --------- |
-| [ProblemReductions.jl](https://github.com/GiggleLiu/ProblemReductions.jl)    | Julia     |
-| [UnitDiskMapping.jl](https://github.com/QuEraComputing/UnitDiskMapping.jl)   | Julia     |
-| [qubogen](https://github.com/tamuhey/qubogen)                                | Python    |
+| Package                                                                    | Ecosystem |
+| -------------------------------------------------------------------------- | --------- |
+| [ProblemReductions.jl](https://github.com/GiggleLiu/ProblemReductions.jl)  | Julia     |
+| [UnitDiskMapping.jl](https://github.com/QuEraComputing/UnitDiskMapping.jl) | Julia     |
+| [qubogen](https://github.com/tamuhey/qubogen)                              | Python    |
 
 ---
 
