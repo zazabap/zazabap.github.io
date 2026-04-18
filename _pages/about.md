@@ -42,7 +42,3 @@ I have recently published research on novel feature extraction algorithms for gr
 ### AI Security
 
 My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.
-
-### Problem Reductions at Scale
-
-Together with Xi-Wei Pan and Prof. Jin-Guo Liu, I co-authored **"Problem Reductions at Scale: Agentic Integration of Computationally Hard Problems"** ([arXiv:2604.11535](https://arxiv.org/abs/2604.11535)). The companion Rust library [problem-reductions](https://github.com/CodingThrust/problem-reductions) provides a `pred` CLI and a reduction graph over 100+ NP-hard problems and 200+ reduction rules, so that registering a solver for one problem unlocks it across the whole connected landscape.
