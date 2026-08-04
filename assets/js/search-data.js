@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A growing collection of your cool projects.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
         },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
         
           title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
@@ -63,11 +56,16 @@ ninja.data = [{
             },},{id: "news-i-will-be-exchanged-at-hkust-guangzhou-campus-from-jan-mar-2026-please-check-the-work-at-prof-jinguo-liu-s-group-for-tensor-network-related-topics-and-research",
           title: 'I will be exchanged at HKUST guangzhou campus from Jan.-Mar. 2026. Please check...',
           description: "",
-          section: "News",},{id: "news-new-preprint-quot-problem-reductions-at-scale-quot-is-on-arxiv-with-the-problem-reductions-rust-library-released-on-github",
-          title: 'New preprint — &amp;quot;Problem Reductions at Scale&amp;quot; is on arXiv, with the problem-reductions...',
+          section: "News",},{id: "news-quot-problem-reductions-at-scale-agentic-integration-of-computationally-hard-problems-quot-got-published-on-arxiv",
+          title: '&amp;quot;Problem Reductions at Scale: Agentic Integration of Computationally Hard Problems&amp;quot; got published on...',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_4/";
+            },},{id: "news-quot-fast-trainable-multilinear-bases-for-image-compression-quot-got-published-on-arxiv",
+          title: '&amp;quot;Fast Trainable Multilinear Bases for Image Compression&amp;quot; got published on arXiv.',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_5/";
             },},{id: "projects-parametricdft-jl",
           title: 'ParametricDFT.jl',
           description: "Learning parametric quantum Fourier transforms via Riemannian optimization on manifolds",
