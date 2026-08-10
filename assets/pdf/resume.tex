@@ -1,0 +1,222 @@
+\documentclass[a4paper,10pt]{article}
+
+%-------------------------------------------------------------------------------
+%	PACKAGES AND FORMATTING
+%-------------------------------------------------------------------------------
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontawesome} % for icons
+\usepackage{fancyhdr}
+\usepackage{xcolor} % For colors
+
+% Color palette
+\definecolor{sectionblue}{HTML}{1F4E79}
+\definecolor{accentgreen}{HTML}{27AE60}
+\definecolor{textgray}{HTML}{555555}
+
+% Fonts
+\renewcommand{\familydefault}{\sfdefault}
+
+% Section formatting with color
+\titleformat{\section}
+  {\color{sectionblue}\large\bfseries\uppercase}
+  {}
+  {0em}
+  {\hrule\vspace{0.3em}} % Reduce spacing here
+  [\vspace{-0.5em}] % Reduce spacing after section title
+  
+\titleformat{\subsection}[runin]
+  {\color{accentgreen}\bfseries}
+  {}
+  {0em}
+  {}
+  [.]
+
+% Reduce spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+
+% Custom header for first page only
+\fancypagestyle{firstpage}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyhead[L]{\textbf{\Large\color{sectionblue} Shiwen An}} % Name on the left
+    \fancyhead[R]{% Contact info on the right
+        \color{textgray}
+        \href{mailto:sweynan@icloud.com}{\faEnvelope \ email} \textbullet{}
+        \href{https://github.com/zazabap}{\faGithub \ github} \textbullet{}
+        \href{https://scholar.google.com/citations?user=RVarZsQAAAAJ&hl=en}{\faGlobe \ scholar} \textbullet{}
+        \href{https://zazabap.github.io}{\faGlobe \ website}
+    }
+    \renewcommand{\headrulewidth}{0pt} % Remove line under header
+}
+\pagestyle{plain} % Default style for other pages (no header)
+
+%-------------------------------------------------------------------------------
+%	START DOCUMENT
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\thispagestyle{firstpage} % Apply custom header only on the first page
+\vspace*{-4em} % Adjust this value to reduce spacing
+
+%-------------------------------------------------------------------------------
+%	ABOUT ME
+%-------------------------------------------------------------------------------
+\section*{About Me}
+\textcolor{textgray}{
+ Software engineer and researcher working on Quantum Computing and AI security. Experienced in developing full-stack applications, optimizing machine learning models and quantum computing algorithms. Background in containerization, and automation for AI-driven applications in Python and Rust. Passionate about bridging research and software development to create efficient, secure, and innovative solutions.
+}
+
+%-------------------------------------------------------------------------------
+%	EDUCATION
+%-------------------------------------------------------------------------------
+\section*{Education}
+\textbf{Institute of Science Tokyo (Former Tokyo Institute of Technology)} \hfill {\em Sept. 2023-Present} \\
+Ph.D, in Information and Communication Engineering \textit{\color{accentgreen}(Super Smart Society Incentive)}
+
+\textbf{The High Energy Accelerator Research Organization (KEK)} \hfill {\em Oct. 2020-Sept. 2023} \\
+M.Sc. in Experimental High Energy Physics \textit{\color{accentgreen}(Monbukagakusho Honors)}
+
+\textbf{University of California, San Diego} \hfill {\em June 2016-Mar. 2020} \\
+B.Sc. in Physics \textit{\color{accentgreen}(Provost Honors)}
+
+%-------------------------------------------------------------------------------
+%	TECHNICAL SKILLS
+%-------------------------------------------------------------------------------
+\section*{Technical Skills}
+\textbf{Programming:} Python, C++, Rust, Typescript, Kotlin, Julia\\
+\textbf{Packages or Libraries:} PyTorch, JAX, Pennylane, Qiskit, Manifolds.jl/Manopt.jl, Scikit-learn, Flask, React, GEANT4\\
+\textbf{Dev Tools:} Docker, Grafana, MongoDB, Portainer, PostgreSQL\\
+\textbf{Languages:} English (Professional), Japanese (Business Intermediate), Mandarin (Native)
+
+%-------------------------------------------------------------------------------
+%	EXPERIENCE
+%-------------------------------------------------------------------------------
+\section*{Experience}
+\textbf{Research Associate} \textbar{} \color{sectionblue}RIKEN Advanced Intelligence Project \color{black}\hfill {\em Apr. 2024-Present} \\
+\textcolor{textgray}{Developed methods
+for defending and attacking large language and vision-language models under Prof. Jun Sakuma. Conducted theoretical research on AI security and privacy.}
+
+\textbf{Visiting Scholar} \textbar{} \color{sectionblue}HKUST-Guangzhou \color{black}\hfill {\em Jan. 2026-Mar. 2026} \\
+\textcolor{textgray}{Developing package with rigorous mathematical foundation and scientific computing tools in quantum computing, and provide issues for problem reduction in complexity theory.}
+
+\textbf{Software Engineer Intern} \textbar{} \color{sectionblue} ExaWizards Inc.\color{black} \hfill {\em Aug. 2025-Dec. 2025} \\
+\textcolor{textgray}{Developed a BtoB web application for enterprise HR skill training using React and Kotlin.
+Implemented database migration and data flow design to enhance system efficiency and user experience. }
+
+\textbf{Junior Physicist} \textbar{} \color{sectionblue}Inner Tracking Detector Group (ATLAS Exp., CERN)\color{black} \hfill {\em Apr. 2021-Sept. 2023} \\
+\textcolor{textgray}{Analyzed Higgs self-coupling physics ($HH \rightarrow bb\tau\tau$) using machine learning techniques. Collaborated with CERN on detector testing and data interpretation.}
+
+\textbf{Lab Assistant} \textbar{} \color{sectionblue}Popmintchev Lab, UCSD\color{black} \hfill {\em July 2018–Mar. 2020} \\
+\textcolor{textgray}{Designed optical systems for high harmonic generation. Simulated intensity profiles of laser beams using Matlab for ionized gases ($Ar^+$, $He^+$, $Ne^+$).}
+
+
+%-------------------------------------------------------------------------------
+%	PROJECTS
+%-------------------------------------------------------------------------------
+\section*{Projects}
+
+\textbf{Problem-reduction: Extensible framework for Computational Complexity}
+  \hfill {\em Jan. 2026-April 2026} \\
+Professional scientific software, exploring automation of Agentic Engineering in Computational Complexity. Build up a pipeline for human-agent working system to explore the computational complexity. \href{https://github.com/CodingThrust/problem-reductions/}{lib}
+\\
+\textit{\color{accentgreen}Tools: Opus4.6, Claude Code, Rust}
+
+\textbf{pdft: Trainable Sparse Bases for Image Compression}
+  \hfill {\em Dec. 2025-Present} \\
+\textcolor{textgray}{Authored \textbf{pdft}, a JAX library learning trainable sparse bases that replace the DFT/DCT, optimized on the unitary manifold so the transform stays exactly invertible (QFT, entangled-QFT, TEBD, MERA, DCT-IV bases). Trained bases store Quick Draw images in roughly 20\% fewer bytes than JPEG's $8\times8$ block cosine transform at equal quality (arXiv:2608.00053). Supersedes the Julia original ParametricDFT.jl, ported to feature parity against committed goldens. \href{https://github.com/zazabap/pdft}{lib} \href{https://github.com/zazabap/pdft-benchmarks}{bench}} \\
+\textit{\color{accentgreen}Tools: Python, JAX, Julia, Manopt.jl, Manifolds.jl, Docker}
+
+\textbf{ManifoldsGPU.jl: GPU-Accelerated Riemannian Optimization} \hfill {\em Jan. 2026-Present} \\
+\textcolor{textgray}{Software contribution to the JuliaManifolds organization bringing CUDA acceleration to manifold optimization: batched GPU kernels for manifold operations and retractions, giving roughly $20\times$ speedup for \texttt{exp!} on \texttt{PowerManifold(Stiefel(32,16), 2048)} and $15\times$ for batched-SVD polar retraction. \href{https://github.com/JuliaManifolds/ManifoldsGPU.jl}{lib}} \\
+\textit{\color{accentgreen}Tools: Julia, CUDA.jl, Manifolds.jl, Manopt.jl}
+
+\textbf{LogosQ: Quantum Computing Library in Rust} \hfill {\em July. 2025-Present} \\
+\textcolor{textgray}{Developed a quantum computing library in Rust, implementing quantum gates, circuits, and simulation algorithms from scratch. Optimized the gate with direct gate manipulation and Tensor Contractions, lead to publication and submission to IEEE Transaction on Quantum Engineering. \href{https://github.com/zazabap/LogosQ}{lib} \href{https://logosqbook.vercel.app/}{doc}.
+} \\
+\textit{\color{accentgreen}Tools: Cargo, Rust, Docker, Typescript}
+
+\textbf{DIA: Human Resource Technology for Enterprises Skills Training} \hfill {\em August. 2025- Dec. 2025} \\
+\textcolor{textgray}{A BtoB product that leverages AI to provide personalized training and development programs for employees. Meanwhile, it offers analytics and insights to organizations for workforce optimization and automatic skill gap identification, and generate the tickets distributed to Hiring website like Indeed, Glassdoor, and LinkedIn.} \\
+\textit{\color{accentgreen}Tools: React, Javalin, PostgreSQL, Docker, Kotlin, TypeScript, Postman}
+
+\textbf{Data Extraction and Model Alignment} \hfill {\em Nov. 2024-Apr. 2025} \\
+\textcolor{textgray}{Developed scalable data extraction attack algorithms for large language models,
+improving attack methodologies for membership inference and model alignment. Built end-to-end data pipelines,
+integrating reinforcement learning to optimize model robustness. Designed monitoring and visualization dashboards with Grafana.
+} \\
+\textit{\color{accentgreen}Tools: Grafana, PyTorch, Llama2/3, GPT-2 XL, Docker}
+
+\textbf{Graph Encoding System with Quantum Computing} \hfill {\em Sept. 2023-Nov. 2024} \\
+\textcolor{textgray}{Developed a variational quantum circuit for tensor-based graph encoding. 
+Deployed API interfaces for quantum computation workflows. Published research findings on ArXiv and accepted by IEEE conference.} \\
+\textit{\color{accentgreen}Tools: Pennylane, Qiskit, Python, C++}
+
+\textbf{Data Analysis for Higgs Boson Research} \hfill {\em Jan. 2022-Sept. 2023} \\
+\textcolor{textgray}{Engineered a machine learning pipeline for high-dimensional image data from the ATLAS pixel detector, with custom CNNs and GNNs for feature extraction that improved detection by $15\sim20\%$, plus automated preprocessing for large-scale datasets.} \\
+\textit{\color{accentgreen}Tools: Python, TensorFlow, PyTorch, mySQL}
+
+%-------------------------------------------------------------------------------
+%	Publications
+%-------------------------------------------------------------------------------
+\section*{Publications}
+
+\textbf{Fast Trainable Multilinear Bases for Image Compression} \\
+\textit{Preprint}, arXiv:2608.00053, 2026. \\
+\textcolor{textgray}{URL: \href{https://arxiv.org/abs/2608.00053}{https://arxiv.org/abs/2608.00053}}
+
+\textbf{LogosQ: A High-Performance and Type-Safe Quantum Computing Library in Rust} \\
+\textit{IEEE Transactions on Quantum Engineering (Under Review)}, Techrxiv:, 2025.
+% \textcolor{textgray}{URL: \href{https://techrxiv.org/abs/2501.14185}{https://techrxiv.org/abs/2501.14185}}
+
+\textbf{Tensor-Based Binary Graph Encoding for Variational Quantum Classifiers} \\
+\textit{2025 IEEE Quantum Computing and Network Communication, Nara, Japan}, arXiv:2501.14185, 2025. \\
+\textcolor{textgray}{URL: \href{https://arxiv.org/abs/2501.14185}{https://arxiv.org/abs/2501.14185}}
+
+\textbf{Search for Nearly Mass-Degenerate Higgsinos Using Low-Momentum Mildly Displaced Tracks in $pp$ Collisions at $\sqrt{s} = 13$ TeV with the ATLAS Detector} \\
+\textit{Physical Review Letters}, Vol. 132, No. 22, American Physical Society (APS), 2024. \\
+\textcolor{textgray}{DOI: \href{http://dx.doi.org/10.1103/PhysRevLett.132.221801}{10.1103/PhysRevLett.132.221801}}
+
+\textbf{Overnight Stock Movement Prediction with Contextualized Embedding Incorporating News and Stock} \\
+\textit{2022 IEEE 11th Global Conference on Consumer Electronics (GCCE)}, Pages 476-478, 2022. \\
+\textcolor{textgray}{DOI: \href{http://dx.doi.org/10.1109/GCCE56475.2022.10014070}{10.1109/GCCE56475.2022.10014070}}
+
+%-------------------------------------------------------------------------------
+%	AWARDS AND HONORS
+%-------------------------------------------------------------------------------
+\section*{Awards and Honors}
+\textbf{Science Tokyo Spring Scholarship} \textcolor{textgray}{--- next-generation front-runner development program.} \hfill {\em 2025.12-Now} \\
+\textbf{TSUBAME Scholarship} \textcolor{textgray}{--- for outstanding Ph.D. students at Institute of Science Tokyo.} \hfill {\em 2025.10-12} \\
+\textbf{Super Smart Society Research Incentive} \textcolor{textgray}{--- fundamental technologies for a Super Smart Society.} \hfill {\em 2024.4-Now} \\
+\textbf{JASSO Monbukagakusho Honors Scholarship} \textcolor{textgray}{--- government award for graduate study at KEK.} \hfill {\em 2021-2022} \\
+\textbf{Provost Honors} \textcolor{textgray}{--- UCSD Provost's Honor List for undergraduate academic performance.} \hfill {\em 2016-2020}
+
+% -------------------------------------------------------------------------------
+% 	ADDITIONAL ACTIVITIES
+% -------------------------------------------------------------------------------
+\section*{Additional Activities}
+\begin{itemize}[nosep,leftmargin=1.5em]
+  \setlength\itemsep{0.1em}
+  \item Contribute to multiple open source projects on GitHub, including Pennylane \href{https://github.com/PennyLaneAI/pennylane/releases/tag/v0.40.0}{v0.40.0} and JuliaManifolds.
+  \item Board Game Arena, Catan Global Top 50. + Scythe, Brass Birmingham.
+  \item PADI Advanced Open Water Diver (Licensed 2018).
+  \item GO, Amatuer 2 Dan.
+\end{itemize}
+% \begin{itemize}[leftmargin=*]
+%     \item Board Game Arena, Catan Seasonal Top 50.
+%     \item PADI Advanced Open Water Diver. Licensed since 2018.
+%     \item GO, Amatuer 2 Dan. \textbf{UCSD Go Club.}
+%     \item \textbf{\color{accentgreen}President, OSA Chapter (UCSD):} Organized workshops, invited speakers, and ran outreach for high school students.
+%     \item Former Member, \textbf{Society of Physics Students.} 
+% \end{itemize}
+
+% %-------------------------------------------------------------------------------
+% %	REFERENCES
+% %-------------------------------------------------------------------------------
+% \section*{References}
+% Available upon request.
+
+
+\end{document}
