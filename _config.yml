@@ -54,7 +54,10 @@ navbar_fixed: true
 footer_fixed: false
 search_enabled: true
 socials_in_search: true
-posts_in_search: true
+posts_in_search: false # /blog/ is nav: false, so its posts stay out of ctrl-k search
+# Collections whose entries appear in ctrl-k search. Listing pages for books and
+# teachings are nav: false and hold only al-folio demo content, so they are omitted.
+collections_in_search: [news, projects]
 bib_search: true
 
 # Dimensions
