@@ -1,8 +1,8 @@
 ---
 layout: page
-title: ParametricDFT.jl
-description: Learning parametric quantum Fourier transforms via Riemannian optimization on manifolds
-img: assets/img/projects/comparison_3x3.png
+title: pdft
+description: Trainable multilinear bases for image compression, learned by Riemannian optimization in JAX
+img: assets/img/projects/pdft_banner.png
 importance: 1
 category: work
 related_publications: true
@@ -10,65 +10,86 @@ related_publications: true
 
 ## Overview
 
-[ParametricDFT.jl](https://github.com/nzy1997/ParametricDFT.jl) is a Julia package for learning **parametric quantum Fourier transforms** using manifold optimization. It implements a variational approach to approximate the Discrete Fourier Transform (DFT) using parameterized quantum circuits, with applications to **image compression** and **signal processing**.
+[pdft](https://github.com/zazabap/pdft) is a **JAX** library for learning **parametric quantum Fourier transforms** by manifold optimization. It replaces the fixed DFT or DCT with a basis that is trained per dataset, while keeping near-linear transform cost, exact invertibility, and a parameter count polylogarithmic in the image size.
 
-The core idea: optimize quantum circuit parameters on Riemannian manifolds (products of U(2) and U(1) groups) to learn frequency-domain representations that are more compressible than the standard DFT.
+The core idea: optimize circuit parameters on Riemannian manifolds (products of U(2) and U(1) groups) to learn frequency-domain representations that are more compressible than the standard DFT. On Quick Draw line drawings, the trained basis stores images in roughly 20% fewer bytes than JPEG's 8×8 block cosine transform at the same reconstruction quality.
+
+pdft is the maintained implementation. It supersedes the original Julia package [ParametricDFT.jl](https://github.com/nzy1997/ParametricDFT.jl), which is slated for archival — see [Julia lineage](#julia-lineage) below.
 
 ---
 
 ## Circuit Architectures
 
-The package supports three parametric circuit designs:
-
 <div class="row justify-content-sm-center">
-    <div class="col-sm-10 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/comparison_3x3.png" title="Standard vs Entangled QFT" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm-12 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/projects/topology_gallery.png" title="Four circuit variants and the DCT-IV" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Comparison of Standard 2D QFT and Entangled QFT architectures for a 3×3 system. The entangled variant adds learnable cross-dimensional gates (red) that couple row and column qubits.
+    Figure 2 from the paper — four circuit variants and the DCT-IV acting on an input image <b>x</b>. A box spanning two legs is a general two-qubit tensor U<sup>(4)</sup> ∈ U(4), shared by (a)–(c), which differ only in wiring. A bond with two endpoint dots is a controlled phase M ∈ U(1)<sup>4</sup>, used in (d) both within and across the two wires.
 </div>
 
-- **Standard QFT Basis** — Full quantum Fourier transform circuit with Hadamard and controlled-phase gates
-- **Entangled QFT Basis** — QFT with additional learnable 2-qubit entanglement gates between row and column qubits
-- **TEBD Basis** — Time-Evolving Block Decimation with ring topology for 2D separable transforms
+The variants keep the same local gate and differ in how those tensors are wired:
+
+- **QFT** — the parametric Cooley–Tukey template the rest of the family relaxes from
+- **RichBasis** (a) — relaxes the QFT's phase gate to an all-to-all pattern
+- **TEBD** (b) — nearest-neighbour ring topology
+- **MERA** (c) — hierarchy of disentanglers and isometries
+- **Entangled QFT** (d) — two QFT registers plus one controlled phase between each matched row–column pair; setting those phases to zero recovers the separable QFT
+- **DCT-IV** (e) — real-orthogonal, exact, and used as an initialization
+- **Blocked variants** of the above
 
 ---
 
-## Training & Optimization
+## Training
 
-The package provides Riemannian optimization on the unitary group, with support for multiple solvers:
+Optimization runs on the manifold of unitary matrices, so every iterate stays exactly orthonormal and the learned transform remains invertible by construction. Two Riemannian optimizers are provided: gradient descent and Adam.
 
-- Riemannian Gradient Descent
-- Riemannian Conjugate Gradient
-- Riemannian L-BFGS
-- Riemannian Adam
+```python
+import jax
+import jax.numpy as jnp
+import pdft
 
-All optimizers support both **CPU and GPU** execution via a custom CUDA-compatible backend.
+target = jax.random.normal(jax.random.PRNGKey(7), (4, 4)).astype(jnp.complex128)
+basis = pdft.QFTBasis(m=2, n=2)
+
+result = pdft.train_basis(
+    basis,
+    target=target,
+    loss=pdft.L1Norm(),
+    optimizer=pdft.RiemannianGD(lr=0.01),
+    steps=50,
+    seed=0,
+)
+```
+
+Because the whole stack is JAX, training is JIT-compiled and runs on CPU, GPU, or TPU without a separate accelerator backend.
+
+Beyond training, the package covers JSON and compression I/O, visualization, and runnable demos under `examples/` for basis training, optimizer benchmarking, and MERA.
 
 ---
 
-## GPU Acceleration
+## Julia Lineage
 
-A key contribution is GPU-accelerated Riemannian optimization that bypasses limitations of existing manifold optimization libraries. Batched operations on (2,2,n) tensor arrays minimize kernel launches for significant speedups at scale.
+pdft began as a port of [ParametricDFT.jl](https://github.com/nzy1997/ParametricDFT.jl) and is a feature-complete one: parity against the Julia reference is verified by committed golden files covering training routines, I/O, and visualization. With the port complete, the Julia package is being retired in favor of pdft.
+
+One piece of that work outlived the port. GPU-accelerated Riemannian optimization, originally written to bypass limitations in existing Julia manifold libraries, was upstreamed into [ManifoldsGPU.jl](/projects/3_project/) and now serves the JuliaManifolds ecosystem independently of this project.
 
 ---
 
 ## Key Dependencies
 
-| Package                                                        | Role                             |
-| -------------------------------------------------------------- | -------------------------------- |
-| [Yao.jl](https://github.com/QuantumBFS/Yao.jl)                 | Quantum circuit construction     |
-| [OMEinsum.jl](https://github.com/under-Peter/OMEinsum.jl)      | Tensor network contractions      |
-| [Manifolds.jl](https://github.com/JuliaManifolds/Manifolds.jl) | Riemannian geometry abstractions |
-| [Manopt.jl](https://github.com/JuliaManifolds/Manopt.jl)       | Riemannian optimization solvers  |
-| [Zygote.jl](https://github.com/FluxML/Zygote.jl)               | Automatic differentiation        |
-| [CUDA.jl](https://github.com/JuliaGPU/CUDA.jl)                 | GPU acceleration                 |
+| Package                               | Role                                       |
+| ------------------------------------- | ------------------------------------------ |
+| [JAX](https://github.com/jax-ml/jax)  | Autodiff, JIT compilation, accelerators    |
+| [NumPy](https://numpy.org/)           | Array manipulation and I/O                 |
+| [Matplotlib](https://matplotlib.org/) | Visualization of bases and reconstructions |
 
 ---
 
 ## Links
 
-- **Source code:** [github.com/nzy1997/ParametricDFT.jl](https://github.com/nzy1997/ParametricDFT.jl)
-- **Documentation:** [ParametricDFT.jl docs](https://nzy1997.github.io/ParametricDFT.jl/dev/)
-- **Theory notes:** Available in the repository under `note/`
+- **Source code:** [github.com/zazabap/pdft](https://github.com/zazabap/pdft)
+- **Benchmarks:** [github.com/zazabap/pdft-benchmarks](https://github.com/zazabap/pdft-benchmarks)
+- **Paper:** [Fast Trainable Multilinear Bases for Image Compression (arXiv:2608.00053)](https://arxiv.org/abs/2608.00053)
+- **Julia original:** [github.com/nzy1997/ParametricDFT.jl](https://github.com/nzy1997/ParametricDFT.jl) (being archived)
