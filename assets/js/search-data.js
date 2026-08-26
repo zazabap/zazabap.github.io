@@ -16,14 +16,21 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "Scientific software in quantum computing, manifold optimization, and computational complexity.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
-        },{id: "news-the-paper-on-graph-encoding-with-variational-quantum-circuit-is-accepted-by-ieee-qcnc-2025-in-nara-japan",
+        },{id: "dropdown-projects",
+              title: "projects",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/projects/";
+              },
+            },{id: "dropdown-blog",
+              title: "blog",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/blog/";
+              },
+            },{id: "news-the-paper-on-graph-encoding-with-variational-quantum-circuit-is-accepted-by-ieee-qcnc-2025-in-nara-japan",
           title: 'The paper on graph encoding with variational quantum circuit is accepted by IEEE...',
           description: "",
           section: "News",handler: () => {
