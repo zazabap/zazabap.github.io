@@ -3,7 +3,7 @@ layout: page
 title: projects
 permalink: /projects/
 description: Scientific software in quantum computing, manifold optimization, and computational complexity.
-nav: true
+nav: false # surfaced through the "research" dropdown in _pages/dropdown.md
 nav_order: 3
 display_categories: [work]
 horizontal: false
