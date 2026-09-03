@@ -1,81 +1,60 @@
-# Agent Guidelines for al-folio
+# zazabap.github.io
 
-A simple, clean, and responsive Jekyll theme for academics.
+Personal academic site of Shiwen An, built with plain Jekyll and deployed to GitHub Pages.
 
-## Quick Links by Role
+## Design rules
 
-- **Are you a coding agent?** → Read [`.github/copilot-instructions.md`](.github/copilot-instructions.md) first (tech stack, build, CI/CD, common pitfalls & solutions)
-- **Customizing the site?** → See [`.github/agents/customize.agent.md`](.github/agents/customize.agent.md)
-- **Writing documentation?** → See [`.github/agents/docs.agent.md`](.github/agents/docs.agent.md)
-- **Need setup/deployment help?** → [INSTALL.md](INSTALL.md)
-- **Troubleshooting & FAQ?** → [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-- **Customization & theming?** → [CUSTOMIZE.md](CUSTOMIZE.md)
-- **Quick 5-min start?** → [QUICKSTART.md](QUICKSTART.md)
+The look is deliberately old-fashioned, in the spirit of classic physics and CS
+faculty pages: browser default fonts, black text on white, default link colours,
+no JavaScript, no icons, no dark mode, no cards or grids. All styling is the
+handful of rules inline in `_layouts/default.html`. Keep it that way: write
+plain Markdown or plain HTML; do not add frameworks, web fonts, scripts, or CSS
+classes beyond `plain` (borderless layout table), `contact` (the home-page
+contact table, which stacks its cells on phone-width screens), and `caption`
+(figure caption). The page is readable on a phone as is: a viewport meta tag,
+`max-width: 100%` on images, and text that reflows.
 
-## Essential Commands
+## File map
 
-### Local Development (Docker)
+| Path                            | Purpose                                                                  |
+| ------------------------------- | ------------------------------------------------------------------------ |
+| `index.md`                      | Home: contact block, photo, biography, research, recent news             |
+| `publications.md`               | Hand-written publication list, newest first (no BibTeX pipeline)         |
+| `projects.md`, `_projects/*.md` | Software project index and pages                                         |
+| `news.md`, `_news/*.md`         | Dated announcements; listed on `/` and `/news/`, no standalone pages     |
+| `blog.md`, `_posts/`            | Blog; the nav link appears only once a post exists                       |
+| `assets/pdf/resume.pdf`         | CV, linked directly from the nav                                         |
+| `_layouts/default.html`         | The only layout; nav items come from `nav:` in `_config.yml`             |
+| `_layouts/post.html`            | Adds the date under a blog post title                                    |
 
-The recommended approach is using Docker.
+## Build and deploy
 
 ```bash
-# Initial setup & start dev server
-docker compose pull && docker compose up
-# Site runs at http://localhost:8080
+# With Docker (no local Ruby needed):
+docker compose up --build   # http://localhost:8080
 
-# Rebuild after changing dependencies or Dockerfile
-docker compose up --build
-
-# Stop containers and free port 8080
-docker compose down
+# Or with a local Ruby:
+bundle install
+bundle exec jekyll serve    # http://localhost:4000
 ```
 
-### Pre-Commit Checklist
+The container builds into `/tmp` inside the container, so it never writes
+root-owned files into the repository. Rebuild the image (`--build`) after
+changing the `Gemfile`.
 
-Before every commit, you **must** run these steps:
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and
+pushes `_site` to the `gh-pages` branch that GitHub Pages serves.
 
-1.  **Format Code:**
-    ```bash
-    # (First time only)
-    npm install --save-dev prettier @shopify/prettier-plugin-liquid
-    # Format all files
-    npx prettier . --write
-    ```
-2.  **Build Locally & Verify:**
+## Conventions
 
-    ```bash
-    # Rebuild the site
-    docker compose up --build
-
-    # Verify by visiting http://localhost:8080.
-    # Check navigation, pages, images, and dark mode.
-    ```
-
-## Critical Configuration
-
-When modifying `_config.yml`, these **must be updated together**:
-
-- **Personal site:** `url: https://username.github.io` + `baseurl:` (empty)
-- **Project site:** `url: https://username.github.io` + `baseurl: /repo-name/`
-- **YAML errors:** Quote strings with special characters: `title: "My: Cool Site"`
-
-## Development Workflow
-
-- **Git & Commits:** For commit message format and Git practices, see [.github/GIT_WORKFLOW.md](.github/GIT_WORKFLOW.md).
-- **Code-Specific Instructions:** Consult the relevant instruction file for your code type.
-
-| File Type                                     | Instruction File                                                                                |
-| --------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Markdown content (`_posts/`, `_pages/`, etc.) | [markdown-content.instructions.md](.github/instructions/markdown-content.instructions.md)       |
-| YAML config (`_config.yml`, `_data/`)         | [yaml-configuration.instructions.md](.github/instructions/yaml-configuration.instructions.md)   |
-| BibTeX (`_bibliography/`)                     | [bibtex-bibliography.instructions.md](.github/instructions/bibtex-bibliography.instructions.md) |
-| Liquid templates (`_includes/`, `_layouts/`)  | [liquid-templates.instructions.md](.github/instructions/liquid-templates.instructions.md)       |
-| JavaScript (`_scripts/`)                      | [javascript-scripts.instructions.md](.github/instructions/javascript-scripts.instructions.md)   |
-
-## Common Issues
-
-For troubleshooting, see:
-
-- [Common Pitfalls & Workarounds](.github/copilot-instructions.md#common-pitfalls--workarounds) in copilot-instructions.md
-- [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for detailed solutions
-- [GitHub Issues](https://github.com/alshedivat/al-folio/issues) to search for your specific problem.
+- Publications: add a paragraph to `publications.md` in the existing format
+  (authors, linked title, venue, year, optional `[code]` link), newest first.
+- News: one file per item in `_news/`, dated with `+0900` (the site builds in
+  `Asia/Tokyo`). Every item needs a one-line `title`; for a paper it leads with
+  the quoted paper title, e.g. `'"<Title>" got published on arXiv.'`. The title
+  is what the home page shows; the body is what `/news/` shows. Jekyll would
+  otherwise invent a title from the filename.
+- Project pages: front matter `title`, `description`, `importance` (sort key).
+  Figures are a plain `<img>` followed by `<p class="caption">`. Markdown tables
+  get borders automatically.
+- Math: set `math: true` in a page's front matter to load MathJax on that page only.

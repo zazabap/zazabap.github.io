@@ -1,11 +1,7 @@
 ---
-layout: page
 title: pdft
 description: Trainable multilinear bases for image compression, learned by Riemannian optimization in JAX
-img: assets/img/projects/pdft_banner.png
 importance: 1
-category: work
-related_publications: true
 ---
 
 ## Overview
@@ -20,14 +16,10 @@ pdft is the maintained implementation. It supersedes the original Julia package 
 
 ## Circuit Architectures
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-12 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/topology_gallery.png" title="Four circuit variants and the DCT-IV" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
+<img src="/assets/img/projects/topology_gallery.png" alt="Four circuit variants and the DCT-IV">
+<p class="caption">
     Figure 2 from the paper — four circuit variants and the DCT-IV acting on an input image <b>x</b>. A box spanning two legs is a general two-qubit tensor U<sup>(4)</sup> ∈ U(4), shared by (a)–(c), which differ only in wiring. A bond with two endpoint dots is a controlled phase M ∈ U(1)<sup>4</sup>, used in (d) both within and across the two wires.
-</div>
+</p>
 
 The variants keep the same local gate and differ in how those tensors are wired:
 

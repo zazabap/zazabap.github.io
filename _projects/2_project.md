@@ -1,11 +1,7 @@
 ---
-layout: page
 title: Problem Reductions
 description: A Rust library and CLI (pred) for NP-hard problem definitions, reductions, and routing across solvers
-img: assets/img/projects/problem_reductions.png
 importance: 2
-category: work
-related_publications: true
 ---
 
 ## Overview
@@ -17,14 +13,10 @@ related_publications: true
 
 The reduction graph is transitive: registering a new solver for a single node immediately makes it available to every problem connected to it.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-10 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/projects/problem_reductions.png" title="Reduction graph across 100+ NP-hard problems" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
+<img src="/assets/img/projects/problem_reductions.png" alt="Reduction graph across 100+ NP-hard problems">
+<p class="caption">
     Figure 1 from the paper — a portion of the reduction graph. Nodes are problem types and directed edges are reductions. Registering a solver for any node propagates along outgoing paths to reachable problems.
-</div>
+</p>
 
 ---
 

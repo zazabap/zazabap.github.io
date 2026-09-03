@@ -1,9 +1,6 @@
 ---
-layout: post
 title: '"Problem Reductions at Scale: Agentic Integration of Computationally Hard Problems" got published on arXiv.'
-date: 2026-04-13 09:00:00-0400
-inline: false
-related_posts: false
+date: 2026-04-13 09:00:00+0900
 ---
 
 **"Problem Reductions at Scale: Agentic Integration of Computationally Hard Problems"** (with Xi-Wei Pan and Jin-Guo Liu) is now on arXiv: [arXiv:2604.11535](https://arxiv.org/abs/2604.11535).

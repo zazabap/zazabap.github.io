@@ -1,9 +1,6 @@
 ---
-layout: post
 title: '"Fast Trainable Multilinear Bases for Image Compression" got published on arXiv.'
 date: 2026-08-04 09:00:00+0900
-inline: false
-related_posts: false
 ---
 
 **"Fast Trainable Multilinear Bases for Image Compression"** (with Zhongyi Ni, Huanhai Zhou, and Jin-Guo Liu) is now on arXiv: [arXiv:2608.00053](https://arxiv.org/abs/2608.00053).

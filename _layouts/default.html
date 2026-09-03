@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}{% unless page.url == "/" %} - {{ site.title }}{% endunless %}</title>
+<style>
+  body { max-width: 60em; margin: 1.5em auto; padding: 0 1em; overflow-wrap: break-word; }
+  img { max-width: 100%; }
+  pre { overflow-x: auto; }
+  table { border-collapse: collapse; }
+  th, td { border: 1px solid #999; padding: 2px 8px; vertical-align: top; }
+  table.plain th, table.plain td { border: none; padding: 0 1em 0.2em 0; }
+  .caption { font-style: italic; }
+  @media (max-width: 40em) {
+    table.contact td { display: block; padding: 0 0 1em 0; }
+  }
+</style>
+{% if page.math %}<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>{% endif %}
+</head>
+<body>
+<p>{% assign sep = "" %}{% for item in site.nav %}{% if item.url == "/blog/" and site.posts.size == 0 %}{% continue %}{% endif %}{{ sep }}{% if item.url == page.url %}<b>{{ item.title }}</b>{% else %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}{% assign sep = " | " %}{% endfor %}</p>
+<hr>
+<h1>{{ page.title }}</h1>
+{% if page.description %}<p><i>{{ page.description }}</i></p>{% endif %}
+{{ content }}
+<hr>
+<p><small>Last updated {{ site.time | date: "%B %-d, %Y" }}.</small></p>
+</body>
+</html>

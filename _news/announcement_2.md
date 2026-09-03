@@ -1,9 +1,6 @@
 ---
-layout: post
 title: The official paper on the LogosQ is published on Arxiv
-date: 2025-12-29 16:11:00-0400
-inline: false
-related_posts: false
+date: 2025-12-29 16:11:00+0900
 ---
 
-Please check the following arxiv if you are interested in the implementation details. https://arxiv.org/abs/2512.23183
+The official paper on LogosQ is published on the arXiv: [arXiv:2512.23183](https://arxiv.org/abs/2512.23183). Please check it if you are interested in the implementation details.

@@ -1,10 +1,7 @@
 ---
-layout: page
 title: ManifoldsGPU.jl
 description: GPU and CUDA acceleration for Riemannian optimization in the JuliaManifolds ecosystem
 importance: 3
-category: work
-related_publications: true
 ---
 
 ## Overview

@@ -1,3 +1,5 @@
-_site/
-.git/
-assets/
+.git
+.jekyll-cache
+_site
+node_modules
+vendor
