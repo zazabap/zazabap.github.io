@@ -3,23 +3,10 @@ title: Shiwen An
 permalink: /
 ---
 
-<table class="plain contact">
-<tr>
-<td>
 Ph.D. candidate in Information and Communication Engineering<br>
 Institute of Science Tokyo<br>
 4259 Nagatsuta-cho, Midori-ku<br>
-Yokohama, Kanagawa 226-8503, Japan<br>
-<br>
-Email: an.s.aa@m.titech.ac.jp<br>
-<br>
-<a href="https://github.com/zazabap">GitHub</a> &middot;
-<a href="https://scholar.google.com/citations?user=RVarZsQAAAAJ">Google Scholar</a> &middot;
-<a href="/assets/pdf/resume.pdf">CV (PDF)</a>
-</td>
-<td><img src="/assets/img/prof_pic.jpg" alt="Shiwen An" width="180"></td>
-</tr>
-</table>
+Yokohama, Kanagawa 226-8503, Japan
 
 > *Ludwig Boltzmann, who spent much of his life studying statistical mechanics, died in 1906, by his own hand. Paul Ehrenfest, carrying on the work, died similarly in 1933. Now it is our turn to study statistical mechanics. Perhaps it will be wise to approach the subject cautiously.*
 >
@@ -33,9 +20,9 @@ I obtained my B.S. in Physics from the [University of California, San Diego](htt
 
 ## Research
 
-**Quantum software development.** `LogosQ` is a quantum computing library written in Rust. The library focuses on efficient quantum circuit simulation and optimization. For more information, tutorials, and documentation, please visit [logosqbook.vercel.app](https://logosqbook.vercel.app/). If you are interested in optimization and computation in Rust, feel free to check it out!
+**Scientific computing.** [LogosQ](https://github.com/zazabap/LogosQ) is a quantum computing library written in Rust, focused on efficient circuit simulation and optimization. Tutorials and documentation are at [logosqbook.vercel.app](https://logosqbook.vercel.app/). [ManifoldsGPU.jl](https://github.com/JuliaManifolds/ManifoldsGPU.jl) brings GPU and CUDA acceleration to the [JuliaManifolds](https://github.com/JuliaManifolds) ecosystem, so that Riemannian optimization on products of unitary and Stiefel manifolds runs on the accelerator instead of falling back to the CPU. It grew out of the training needs of [pdft](/projects/1_project/). Both projects are open source, and contributions are welcome.
 
-**Quantum machine learning.** I have recently published research on novel feature extraction algorithms for graphs that can be effectively applied with Variational Quantum Circuits (VQCs) in resource-limited settings. This work bridges classical graph theory with quantum machine learning techniques.
+**Quantum machine learning.** I am currently exploring learnable Fourier bases and parameterized tensor networks. The starting point is the quantum Fourier transform: viewed as a tensor network of one- and two-qubit gates, it becomes a family of bases whose parameters can be trained on unitary manifolds while keeping exact invertibility, near-linear transform cost, and a parameter count polylogarithmic in the signal size. In [pdft](/projects/1_project/) ([arXiv:2608.00053](https://arxiv.org/abs/2608.00053)) such trained bases yield more compressible image representations than the fixed DFT or DCT. I am now studying which other classical transforms admit this kind of parameterization, and what structured tensor networks offer over generic variational circuits. Earlier work in this direction proposed a [tensor-based binary graph encoding](https://arxiv.org/abs/2501.14185) for variational quantum classifiers in resource-limited settings.
 
 **AI security.** My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.
 

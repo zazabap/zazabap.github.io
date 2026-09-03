@@ -11,15 +11,18 @@
   table { border-collapse: collapse; }
   th, td { border: 1px solid #999; padding: 2px 8px; vertical-align: top; }
   table.plain th, table.plain td { border: none; padding: 0 1em 0.2em 0; }
+  table.plain td:last-child { padding-right: 0; }
   .caption { font-style: italic; }
-  @media (max-width: 40em) {
-    table.contact td { display: block; padding: 0 0 1em 0; }
-  }
 </style>
 {% if page.math %}<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>{% endif %}
 </head>
 <body>
-<p>{% assign sep = "" %}{% for item in site.nav %}{% if item.url == "/blog/" and site.posts.size == 0 %}{% continue %}{% endif %}{{ sep }}{% if item.url == page.url %}<b>{{ item.title }}</b>{% else %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}{% assign sep = " | " %}{% endfor %}</p>
+<table class="plain" width="100%">
+<tr>
+<td>{% assign sep = "" %}{% for item in site.nav %}{% if item.url == "/blog/" and site.posts.size == 0 %}{% continue %}{% endif %}{{ sep }}{% if item.url == page.url %}<b>{{ item.title }}</b>{% else %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}{% assign sep = " | " %}{% endfor %}</td>
+<td align="right">{% assign sep = "" %}{% for item in site.links %}{{ sep }}<a href="{{ item.url }}">{{ item.title }}</a>{% assign sep = " &middot; " %}{% endfor %}</td>
+</tr>
+</table>
 <hr>
 <h1>{{ page.title }}</h1>
 {% if page.description %}<p><i>{{ page.description }}</i></p>{% endif %}

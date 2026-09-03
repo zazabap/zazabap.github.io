@@ -22,6 +22,15 @@ nav:
   - title: CV
     url: /assets/pdf/resume.pdf
 
+# Links shown at the top right of every page.
+links:
+  - title: GitHub
+    url: https://github.com/zazabap
+  - title: Google Scholar
+    url: https://scholar.google.com/citations?user=RVarZsQAAAAJ
+  - title: Email
+    url: mailto:an.s.aa@m.titech.ac.jp
+
 markdown: kramdown
 kramdown:
   input: GFM
@@ -48,11 +57,8 @@ defaults:
       layout: post
 
 exclude:
-  - AGENTS.md
   - CLAUDE.md
   - README.md
-  - LICENSE
   - Gemfile
   - Gemfile.lock
   - vendor
-  - node_modules
