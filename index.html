@@ -11,35 +11,25 @@
   table { border-collapse: collapse; }
   th, td { border: 1px solid #999; padding: 2px 8px; vertical-align: top; }
   table.plain th, table.plain td { border: none; padding: 0 1em 0.2em 0; }
+  table.plain td:last-child { padding-right: 0; }
   .caption { font-style: italic; }
-  @media (max-width: 40em) {
-    table.contact td { display: block; padding: 0 0 1em 0; }
-  }
 </style>
 
 </head>
 <body>
-<p><b>Home</b> | <a href="/publications/">Publications</a> | <a href="/projects/">Projects</a> | <a href="/news/">News</a> | <a href="/assets/pdf/resume.pdf">CV</a></p>
+<table class="plain" width="100%">
+<tr>
+<td><b>Home</b> | <a href="/publications/">Publications</a> | <a href="/projects/">Projects</a> | <a href="/news/">News</a> | <a href="/assets/pdf/resume.pdf">CV</a></td>
+<td align="right"><a href="https://github.com/zazabap">GitHub</a> &middot; <a href="https://scholar.google.com/citations?user=RVarZsQAAAAJ">Google Scholar</a> &middot; <a href="mailto:an.s.aa@m.titech.ac.jp">Email</a></td>
+</tr>
+</table>
 <hr>
 <h1>Shiwen An</h1>
 
-<table class="plain contact">
-<tr>
-<td>
-Ph.D. candidate in Information and Communication Engineering<br />
+<p>Ph.D. candidate in Information and Communication Engineering<br />
 Institute of Science Tokyo<br />
 4259 Nagatsuta-cho, Midori-ku<br />
-Yokohama, Kanagawa 226-8503, Japan<br />
-<br />
-Email: an.s.aa@m.titech.ac.jp<br />
-<br />
-<a href="https://github.com/zazabap">GitHub</a> &middot;
-<a href="https://scholar.google.com/citations?user=RVarZsQAAAAJ">Google Scholar</a> &middot;
-<a href="/assets/pdf/resume.pdf">CV (PDF)</a>
-</td>
-<td><img src="/assets/img/prof_pic.jpg" alt="Shiwen An" width="180" /></td>
-</tr>
-</table>
+Yokohama, Kanagawa 226-8503, Japan</p>
 
 <blockquote>
   <p><em>Ludwig Boltzmann, who spent much of his life studying statistical mechanics, died in 1906, by his own hand. Paul Ehrenfest, carrying on the work, died similarly in 1933. Now it is our turn to study statistical mechanics. Perhaps it will be wise to approach the subject cautiously.</em></p>
@@ -55,9 +45,9 @@ Email: an.s.aa@m.titech.ac.jp<br />
 
 <h2 id="research">Research</h2>
 
-<p><strong>Quantum software development.</strong> <code>LogosQ</code> is a quantum computing library written in Rust. The library focuses on efficient quantum circuit simulation and optimization. For more information, tutorials, and documentation, please visit <a href="https://logosqbook.vercel.app/">logosqbook.vercel.app</a>. If you are interested in optimization and computation in Rust, feel free to check it out!</p>
+<p><strong>Scientific computing.</strong> <a href="https://github.com/zazabap/LogosQ">LogosQ</a> is a quantum computing library written in Rust, focused on efficient circuit simulation and optimization. Tutorials and documentation are at <a href="https://logosqbook.vercel.app/">logosqbook.vercel.app</a>. <a href="https://github.com/JuliaManifolds/ManifoldsGPU.jl">ManifoldsGPU.jl</a> brings GPU and CUDA acceleration to the <a href="https://github.com/JuliaManifolds">JuliaManifolds</a> ecosystem, so that Riemannian optimization on products of unitary and Stiefel manifolds runs on the accelerator instead of falling back to the CPU. It grew out of the training needs of <a href="/projects/1_project/">pdft</a>. Both projects are open source, and contributions are welcome.</p>
 
-<p><strong>Quantum machine learning.</strong> I have recently published research on novel feature extraction algorithms for graphs that can be effectively applied with Variational Quantum Circuits (VQCs) in resource-limited settings. This work bridges classical graph theory with quantum machine learning techniques.</p>
+<p><strong>Quantum machine learning.</strong> I am currently exploring learnable Fourier bases and parameterized tensor networks. The starting point is the quantum Fourier transform: viewed as a tensor network of one- and two-qubit gates, it becomes a family of bases whose parameters can be trained on unitary manifolds while keeping exact invertibility, near-linear transform cost, and a parameter count polylogarithmic in the signal size. In <a href="/projects/1_project/">pdft</a> (<a href="https://arxiv.org/abs/2608.00053">arXiv:2608.00053</a>) such trained bases yield more compressible image representations than the fixed DFT or DCT. I am now studying which other classical transforms admit this kind of parameterization, and what structured tensor networks offer over generic variational circuits. Earlier work in this direction proposed a <a href="https://arxiv.org/abs/2501.14185">tensor-based binary graph encoding</a> for variational quantum classifiers in resource-limited settings.</p>
 
 <p><strong>AI security.</strong> My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.</p>
 

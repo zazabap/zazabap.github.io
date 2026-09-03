@@ -11,15 +11,18 @@
   table { border-collapse: collapse; }
   th, td { border: 1px solid #999; padding: 2px 8px; vertical-align: top; }
   table.plain th, table.plain td { border: none; padding: 0 1em 0.2em 0; }
+  table.plain td:last-child { padding-right: 0; }
   .caption { font-style: italic; }
-  @media (max-width: 40em) {
-    table.contact td { display: block; padding: 0 0 1em 0; }
-  }
 </style>
 
 </head>
 <body>
-<p><a href="/">Home</a> | <a href="/publications/">Publications</a> | <a href="/projects/">Projects</a> | <a href="/news/">News</a> | <a href="/assets/pdf/resume.pdf">CV</a></p>
+<table class="plain" width="100%">
+<tr>
+<td><a href="/">Home</a> | <a href="/publications/">Publications</a> | <a href="/projects/">Projects</a> | <a href="/news/">News</a> | <a href="/assets/pdf/resume.pdf">CV</a></td>
+<td align="right"><a href="https://github.com/zazabap">GitHub</a> &middot; <a href="https://scholar.google.com/citations?user=RVarZsQAAAAJ">Google Scholar</a> &middot; <a href="mailto:an.s.aa@m.titech.ac.jp">Email</a></td>
+</tr>
+</table>
 <hr>
 <h1>ManifoldsGPU.jl</h1>
 <p><i>GPU and CUDA acceleration for Riemannian optimization in the JuliaManifolds ecosystem</i></p>
