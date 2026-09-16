@@ -14,7 +14,7 @@ Yokohama, Kanagawa 226-8503, Japan
 
 ## Biography
 
-I am a Ph.D. candidate at the [Institute of Science Tokyo](https://www.isct.ac.jp/en) (formerly Tokyo Institute of Technology), where I am supervised by [Prof. Konstantinos Slavakis](http://www.slavakislab.ict.e.titech.ac.jp/) and advised by [Prof. Jun Sakuma](https://www.riken.jp/en/research/labs/aip/ai_soc/ai_sec_privacy/index.html). My research focuses on the intersection of quantum computing, machine learning, and AI security.
+I am a Ph.D. candidate at the [Institute of Science Tokyo](https://www.isct.ac.jp/en) (formerly Tokyo Institute of Technology), where I am supervised by [Prof. Konstantinos Slavakis](http://www.slavakislab.ict.e.titech.ac.jp/). My research focuses on the intersection of quantum computing and machine learning.
 
 I obtained my B.S. in Physics from the [University of California, San Diego](http://ucsd.edu) and my M.S. in Experimental Particle Physics from [KEK](https://atlas.kek.jp/main/news/index.html).
 
@@ -22,9 +22,7 @@ I obtained my B.S. in Physics from the [University of California, San Diego](htt
 
 **Scientific computing.** [LogosQ](https://github.com/zazabap/LogosQ) is a quantum computing library written in Rust, focused on efficient circuit simulation and optimization. Tutorials and documentation are at [logosqbook.vercel.app](https://logosqbook.vercel.app/). [ManifoldsGPU.jl](https://github.com/JuliaManifolds/ManifoldsGPU.jl) brings GPU and CUDA acceleration to the [JuliaManifolds](https://github.com/JuliaManifolds) ecosystem, so that Riemannian optimization on products of unitary and Stiefel manifolds runs on the accelerator instead of falling back to the CPU. It grew out of the training needs of [pdft](/projects/1_project/). Both projects are open source, and contributions are welcome.
 
-**Quantum machine learning.** I am currently exploring learnable Fourier bases and parameterized tensor networks. The starting point is the quantum Fourier transform: viewed as a tensor network of one- and two-qubit gates, it becomes a family of bases whose parameters can be trained on unitary manifolds while keeping exact invertibility, near-linear transform cost, and a parameter count polylogarithmic in the signal size. In [pdft](/projects/1_project/) ([arXiv:2608.00053](https://arxiv.org/abs/2608.00053)) such trained bases yield more compressible image representations than the fixed DFT or DCT. I am now studying which other classical transforms admit this kind of parameterization, and what structured tensor networks offer over generic variational circuits. Earlier work in this direction proposed a [tensor-based binary graph encoding](https://arxiv.org/abs/2501.14185) for variational quantum classifiers in resource-limited settings.
-
-**AI security.** My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.
+**Quantum machine learning.** I work on learnable Fourier bases and parameterized tensor networks. Viewed as a circuit of one- and two-qubit gates, the quantum Fourier transform becomes a family of bases that can be trained on unitary manifolds while keeping exact invertibility and near-linear transform cost. Trained this way, [pdft](/projects/1_project/) compresses images better than the fixed DFT or DCT ([arXiv:2608.00053](https://arxiv.org/abs/2608.00053)), and with the Hadamards held fixed the same circuits inpaint images with minimum coherence guaranteed by construction ([arXiv:2609.17298](https://arxiv.org/abs/2609.17298)). Earlier work proposed a [tensor-based binary graph encoding](https://arxiv.org/abs/2501.14185) for variational quantum classifiers.
 
 ## News
 

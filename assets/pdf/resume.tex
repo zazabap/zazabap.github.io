@@ -3,7 +3,7 @@
 %-------------------------------------------------------------------------------
 %	PACKAGES AND FORMATTING
 %-------------------------------------------------------------------------------
-\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[a4paper,margin=0.75in,top=0.55in,bottom=0.55in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
@@ -66,7 +66,7 @@
 %-------------------------------------------------------------------------------
 \section*{About Me}
 \textcolor{textgray}{
- Software engineer and researcher working on Quantum Computing and AI security. Experienced in developing full-stack applications, optimizing machine learning models and quantum computing algorithms. Background in containerization, and automation for AI-driven applications in Python and Rust. Passionate about bridging research and software development to create efficient, secure, and innovative solutions.
+ Software engineer and researcher working on Quantum Computing. Experienced in developing full-stack applications, optimizing machine learning models and quantum computing algorithms. Background in containerization, and automation for AI-driven applications in Python and Rust. Passionate about bridging research and software development to create efficient, secure, and innovative solutions.
 }
 
 %-------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ B.Sc. in Physics \textit{\color{accentgreen}(Provost Honors)}
 \section*{Experience}
 \textbf{Research Associate} \textbar{} \color{sectionblue}RIKEN Advanced Intelligence Project \color{black}\hfill {\em Apr. 2024-Present} \\
 \textcolor{textgray}{Developed methods
-for defending and attacking large language and vision-language models under Prof. Jun Sakuma. Conducted theoretical research on AI security and privacy.}
+for defending and attacking large language and vision-language models. Conducted theoretical research on AI security and privacy.}
 
 \textbf{Visiting Scholar} \textbar{} \color{sectionblue}HKUST-Guangzhou \color{black}\hfill {\em Jan. 2026-Mar. 2026} \\
 \textcolor{textgray}{Developing package with rigorous mathematical foundation and scientific computing tools in quantum computing, and provide issues for problem reduction in complexity theory.}
@@ -124,9 +124,9 @@ Professional scientific software, exploring automation of Agentic Engineering in
 \\
 \textit{\color{accentgreen}Tools: Opus4.6, Claude Code, Rust}
 
-\textbf{pdft: Trainable Sparse Bases for Image Compression}
+\textbf{pdft: Trainable Sparse Bases for Image Compression and Inpainting}
   \hfill {\em Dec. 2025-Present} \\
-\textcolor{textgray}{Authored \textbf{pdft}, a JAX library learning trainable sparse bases that replace the DFT/DCT, optimized on the unitary manifold so the transform stays exactly invertible (QFT, entangled-QFT, TEBD, MERA, DCT-IV bases). Trained bases store Quick Draw images in roughly 20\% fewer bytes than JPEG's $8\times8$ block cosine transform at equal quality (arXiv:2608.00053). Supersedes the Julia original ParametricDFT.jl, ported to feature parity against committed goldens. \href{https://github.com/zazabap/pdft}{lib} \href{https://github.com/zazabap/pdft-benchmarks}{bench}} \\
+\textcolor{textgray}{Authored \textbf{pdft}, a JAX library learning trainable sparse bases that replace the DFT/DCT, optimized on the unitary manifold so the transform stays exactly invertible (QFT, entangled-QFT, TEBD, MERA, DCT-IV bases). Trained bases store Quick Draw images in roughly 20\% fewer bytes than JPEG's $8\times8$ block cosine transform at equal quality (arXiv:2608.00053); with frozen Hadamards the same circuits inpaint DIV2K images 2\,dB above the DFT using 288 phases (arXiv:2609.17298). Supersedes the Julia original ParametricDFT.jl, ported to feature parity against committed goldens. \href{https://github.com/zazabap/pdft}{lib} \href{https://github.com/zazabap/pdft-benchmarks}{bench}} \\
 \textit{\color{accentgreen}Tools: Python, JAX, Julia, Manopt.jl, Manifolds.jl, Docker}
 
 \textbf{ManifoldsGPU.jl: GPU-Accelerated Riemannian Optimization} \hfill {\em Jan. 2026-Present} \\
@@ -162,6 +162,10 @@ Deployed API interfaces for quantum computation workflows. Published research fi
 %	Publications
 %-------------------------------------------------------------------------------
 \section*{Publications}
+
+\textbf{Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting} \\
+\textit{Preprint}, arXiv:2609.17298, 2026. Submitted to ICASSP 2027. \\
+\textcolor{textgray}{URL: \href{https://arxiv.org/abs/2609.17298}{https://arxiv.org/abs/2609.17298}}
 
 \textbf{Fast Trainable Multilinear Bases for Image Compression} \\
 \textit{Preprint}, arXiv:2608.00053, 2026. \\

@@ -5,6 +5,10 @@ permalink: /publications/
 
 Newest first. See also [Google Scholar](https://scholar.google.com/citations?user=RVarZsQAAAAJ).
 
+Shiwen An, Konstantinos Slavakis.
+[Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting](https://arxiv.org/abs/2609.17298).
+arXiv:2609.17298, 2026. Submitted to ICASSP 2027.
+
 Shiwen An, Zhongyi Ni, Huanhai Zhou, Jin-Guo Liu.
 [Fast Trainable Multilinear Bases for Image Compression](https://arxiv.org/abs/2608.00053).
 arXiv:2608.00053, 2026.
