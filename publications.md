@@ -11,7 +11,7 @@ arXiv:2609.17298, 2026. Submitted to ICASSP 2027.
 
 Shiwen An, Zhongyi Ni, Huanhai Zhou, Jin-Guo Liu.
 [Fast Trainable Multilinear Bases for Image Compression](https://arxiv.org/abs/2608.00053).
-arXiv:2608.00053, 2026.
+arXiv:2608.00053, 2026. Submitted to *Quantum*.
 \[[code](https://github.com/zazabap/pdft)\]
 
 Xi-Wei Pan, Shi-Wen An, Jin-Guo Liu.
