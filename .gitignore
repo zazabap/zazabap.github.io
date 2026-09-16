@@ -4,3 +4,4 @@ _site
 .bundle
 vendor
 .ruby-lsp
+assets/pdf/cover-letter.*
