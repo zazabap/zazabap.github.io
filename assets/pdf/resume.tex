@@ -3,7 +3,7 @@
 %-------------------------------------------------------------------------------
 %	PACKAGES AND FORMATTING
 %-------------------------------------------------------------------------------
-\usepackage[a4paper,margin=0.75in,top=0.55in,bottom=0.55in]{geometry}
+\usepackage[a4paper,margin=0.75in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
@@ -96,8 +96,7 @@ B.Sc. in Physics \textit{\color{accentgreen}(Provost Honors)}
 %-------------------------------------------------------------------------------
 \section*{Experience}
 \textbf{Research Associate} \textbar{} \color{sectionblue}RIKEN Advanced Intelligence Project \color{black}\hfill {\em Apr. 2024-Present} \\
-\textcolor{textgray}{Developed methods
-for defending and attacking large language and vision-language models. Conducted theoretical research on AI security and privacy.}
+\textcolor{textgray}{Developed data extraction and membership-inference attacks and defenses for large language and vision-language models, plus RL-based alignment pipelines. Conducted theoretical research on AI security and privacy.}
 
 \textbf{Visiting Scholar} \textbar{} \color{sectionblue}HKUST-Guangzhou \color{black}\hfill {\em Jan. 2026-Mar. 2026} \\
 \textcolor{textgray}{Developing package with rigorous mathematical foundation and scientific computing tools in quantum computing, and provide issues for problem reduction in complexity theory.}
@@ -107,7 +106,7 @@ for defending and attacking large language and vision-language models. Conducted
 Implemented database migration and data flow design to enhance system efficiency and user experience. }
 
 \textbf{Junior Physicist} \textbar{} \color{sectionblue}Inner Tracking Detector Group (ATLAS Exp., CERN)\color{black} \hfill {\em Apr. 2021-Sept. 2023} \\
-\textcolor{textgray}{Analyzed Higgs self-coupling physics ($HH \rightarrow bb\tau\tau$) using machine learning techniques. Collaborated with CERN on detector testing and data interpretation.}
+\textcolor{textgray}{Analyzed Higgs self-coupling physics ($HH \rightarrow bb\tau\tau$) with custom CNN/GNN pipelines on ATLAS pixel-detector data. Collaborated with CERN on detector testing and data interpretation.}
 
 \textbf{Lab Assistant} \textbar{} \color{sectionblue}Popmintchev Lab, UCSD\color{black} \hfill {\em July 2018–Mar. 2020} \\
 \textcolor{textgray}{Designed optical systems for high harmonic generation. Simulated intensity profiles of laser beams using Matlab for ionized gases ($Ar^+$, $He^+$, $Ne^+$).}
@@ -118,74 +117,47 @@ Implemented database migration and data flow design to enhance system efficiency
 %-------------------------------------------------------------------------------
 \section*{Projects}
 
-\textbf{Problem-reduction: Extensible framework for Computational Complexity}
-  \hfill {\em Jan. 2026-April 2026} \\
-Professional scientific software, exploring automation of Agentic Engineering in Computational Complexity. Build up a pipeline for human-agent working system to explore the computational complexity. \href{https://github.com/CodingThrust/problem-reductions/}{lib}
-\\
-\textit{\color{accentgreen}Tools: Opus4.6, Claude Code, Rust}
+\textbf{pdft: Trainable Unitary Bases for Image Compression and Inpainting} \hfill {\em Dec. 2025-Present} \\
+\textcolor{textgray}{JAX library of trainable sparse bases (QFT, entangled QFT, TEBD, MERA, DCT-IV) optimized on the unitary manifold so the transform stays exactly invertible; the code behind arXiv:2608.00053 and arXiv:2609.17298. Supersedes the Julia original ParametricDFT.jl. \href{https://github.com/zazabap/pdft}{lib} \href{https://github.com/zazabap/pdft-benchmarks}{bench}}
+\textit{\color{accentgreen}Python, JAX, Julia, Manopt.jl}
 
-\textbf{pdft: Trainable Sparse Bases for Image Compression and Inpainting}
-  \hfill {\em Dec. 2025-Present} \\
-\textcolor{textgray}{Authored \textbf{pdft}, a JAX library learning trainable sparse bases that replace the DFT/DCT, optimized on the unitary manifold so the transform stays exactly invertible (QFT, entangled-QFT, TEBD, MERA, DCT-IV bases). Trained bases store Quick Draw images in roughly 20\% fewer bytes than JPEG's $8\times8$ block cosine transform at equal quality (arXiv:2608.00053); with frozen Hadamards the same circuits inpaint DIV2K images 2\,dB above the DFT using 288 phases (arXiv:2609.17298). Supersedes the Julia original ParametricDFT.jl, ported to feature parity against committed goldens. \href{https://github.com/zazabap/pdft}{lib} \href{https://github.com/zazabap/pdft-benchmarks}{bench}} \\
-\textit{\color{accentgreen}Tools: Python, JAX, Julia, Manopt.jl, Manifolds.jl, Docker}
+\textbf{problem-reductions: Extensible Framework for Computational Complexity} \hfill {\em Jan. 2026-Apr. 2026} \\
+\textcolor{textgray}{Rust library and \texttt{pred} CLI cataloguing 100+ NP-hard problems and 200+ reductions, routing any problem to a registered solver through the reduction graph; developed with a human--agent engineering pipeline (arXiv:2604.11535). \href{https://github.com/CodingThrust/problem-reductions/}{lib}}
+\textit{\color{accentgreen}Rust, Claude Code}
+
+\textbf{LogosQ: Quantum Computing Library in Rust} \hfill {\em July 2025-Present} \\
+\textcolor{textgray}{Type-safe simulator with gates, circuits, and optimized direct-gate and tensor-contraction backends (arXiv:2512.23183). \href{https://github.com/zazabap/LogosQ}{lib} \href{https://logosqbook.vercel.app/}{doc}}
+\textit{\color{accentgreen}Rust, TypeScript, Docker}
 
 \textbf{ManifoldsGPU.jl: GPU-Accelerated Riemannian Optimization} \hfill {\em Jan. 2026-Present} \\
-\textcolor{textgray}{Software contribution to the JuliaManifolds organization bringing CUDA acceleration to manifold optimization: batched GPU kernels for manifold operations and retractions, giving roughly $20\times$ speedup for \texttt{exp!} on \texttt{PowerManifold(Stiefel(32,16), 2048)} and $15\times$ for batched-SVD polar retraction. \href{https://github.com/JuliaManifolds/ManifoldsGPU.jl}{lib}} \\
-\textit{\color{accentgreen}Tools: Julia, CUDA.jl, Manifolds.jl, Manopt.jl}
-
-\textbf{LogosQ: Quantum Computing Library in Rust} \hfill {\em July. 2025-Present} \\
-\textcolor{textgray}{Developed a quantum computing library in Rust, implementing quantum gates, circuits, and simulation algorithms from scratch. Optimized the gate with direct gate manipulation and Tensor Contractions, lead to publication and submission to IEEE Transaction on Quantum Engineering. \href{https://github.com/zazabap/LogosQ}{lib} \href{https://logosqbook.vercel.app/}{doc}.
-} \\
-\textit{\color{accentgreen}Tools: Cargo, Rust, Docker, Typescript}
-
-\textbf{DIA: Human Resource Technology for Enterprises Skills Training} \hfill {\em August. 2025- Dec. 2025} \\
-\textcolor{textgray}{A BtoB product that leverages AI to provide personalized training and development programs for employees. Meanwhile, it offers analytics and insights to organizations for workforce optimization and automatic skill gap identification, and generate the tickets distributed to Hiring website like Indeed, Glassdoor, and LinkedIn.} \\
-\textit{\color{accentgreen}Tools: React, Javalin, PostgreSQL, Docker, Kotlin, TypeScript, Postman}
-
-\textbf{Data Extraction and Model Alignment} \hfill {\em Nov. 2024-Apr. 2025} \\
-\textcolor{textgray}{Developed scalable data extraction attack algorithms for large language models,
-improving attack methodologies for membership inference and model alignment. Built end-to-end data pipelines,
-integrating reinforcement learning to optimize model robustness. Designed monitoring and visualization dashboards with Grafana.
-} \\
-\textit{\color{accentgreen}Tools: Grafana, PyTorch, Llama2/3, GPT-2 XL, Docker}
-
-\textbf{Graph Encoding System with Quantum Computing} \hfill {\em Sept. 2023-Nov. 2024} \\
-\textcolor{textgray}{Developed a variational quantum circuit for tensor-based graph encoding. 
-Deployed API interfaces for quantum computation workflows. Published research findings on ArXiv and accepted by IEEE conference.} \\
-\textit{\color{accentgreen}Tools: Pennylane, Qiskit, Python, C++}
-
-\textbf{Data Analysis for Higgs Boson Research} \hfill {\em Jan. 2022-Sept. 2023} \\
-\textcolor{textgray}{Engineered a machine learning pipeline for high-dimensional image data from the ATLAS pixel detector, with custom CNNs and GNNs for feature extraction that improved detection by $15\sim20\%$, plus automated preprocessing for large-scale datasets.} \\
-\textit{\color{accentgreen}Tools: Python, TensorFlow, PyTorch, mySQL}
+\textcolor{textgray}{CUDA acceleration for the JuliaManifolds ecosystem: batched kernels for manifold operations and retractions, about $20\times$ faster \texttt{exp!} on \texttt{PowerManifold(Stiefel(32,16), 2048)} and $15\times$ for batched-SVD polar retraction. \href{https://github.com/JuliaManifolds/ManifoldsGPU.jl}{lib}}
+\textit{\color{accentgreen}Julia, CUDA.jl, Manifolds.jl}
 
 %-------------------------------------------------------------------------------
-%	Publications
+%	PUBLICATIONS
 %-------------------------------------------------------------------------------
 \section*{Publications}
 
 \textbf{Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting} \\
-\textit{Preprint}, arXiv:2609.17298, 2026. Submitted to ICASSP 2027. \\
-\textcolor{textgray}{URL: \href{https://arxiv.org/abs/2609.17298}{https://arxiv.org/abs/2609.17298}}
+\textcolor{textgray}{S. An, K. Slavakis. \href{https://arxiv.org/abs/2609.17298}{arXiv:2609.17298}, 2026. Submitted to ICASSP 2027. \href{https://github.com/zazabap/pdft}{[code]}}
 
 \textbf{Fast Trainable Multilinear Bases for Image Compression} \\
-\textit{Preprint}, arXiv:2608.00053, 2026. \\
-\textcolor{textgray}{URL: \href{https://arxiv.org/abs/2608.00053}{https://arxiv.org/abs/2608.00053}}
+\textcolor{textgray}{S. An, Z. Ni, H. Zhou, J.-G. Liu. \href{https://arxiv.org/abs/2608.00053}{arXiv:2608.00053}, 2026. Submitted to \textit{Quantum}. \href{https://github.com/zazabap/pdft}{[code]}}
+
+\textbf{Problem Reductions at Scale: Agentic Integration of Computationally Hard Problems} \\
+\textcolor{textgray}{X.-W. Pan, S. An, J.-G. Liu. \href{https://arxiv.org/abs/2604.11535}{arXiv:2604.11535}, 2026. \href{https://github.com/CodingThrust/problem-reductions}{[code]}}
 
 \textbf{LogosQ: A High-Performance and Type-Safe Quantum Computing Library in Rust} \\
-\textit{IEEE Transactions on Quantum Engineering (Under Review)}, Techrxiv:, 2025.
-% \textcolor{textgray}{URL: \href{https://techrxiv.org/abs/2501.14185}{https://techrxiv.org/abs/2501.14185}}
+\textcolor{textgray}{S. An, J. Wang, K. Slavakis. \href{https://arxiv.org/abs/2512.23183}{arXiv:2512.23183}, 2025. Under review at \textit{IEEE Transactions on Quantum Engineering}. \href{https://github.com/zazabap/LogosQ}{[code]}}
 
 \textbf{Tensor-Based Binary Graph Encoding for Variational Quantum Classifiers} \\
-\textit{2025 IEEE Quantum Computing and Network Communication, Nara, Japan}, arXiv:2501.14185, 2025. \\
-\textcolor{textgray}{URL: \href{https://arxiv.org/abs/2501.14185}{https://arxiv.org/abs/2501.14185}}
+\textcolor{textgray}{S. An, K. Slavakis. \textit{IEEE QCNC}, Nara, Japan, 2025. \href{https://arxiv.org/abs/2501.14185}{arXiv:2501.14185}}
 
 \textbf{Search for Nearly Mass-Degenerate Higgsinos Using Low-Momentum Mildly Displaced Tracks in $pp$ Collisions at $\sqrt{s} = 13$ TeV with the ATLAS Detector} \\
-\textit{Physical Review Letters}, Vol. 132, No. 22, American Physical Society (APS), 2024. \\
-\textcolor{textgray}{DOI: \href{http://dx.doi.org/10.1103/PhysRevLett.132.221801}{10.1103/PhysRevLett.132.221801}}
+\textcolor{textgray}{ATLAS Collaboration. \textit{Physical Review Letters} 132, 221801, 2024. \href{http://dx.doi.org/10.1103/PhysRevLett.132.221801}{doi:10.1103/PhysRevLett.132.221801}}
 
 \textbf{Overnight Stock Movement Prediction with Contextualized Embedding Incorporating News and Stock} \\
-\textit{2022 IEEE 11th Global Conference on Consumer Electronics (GCCE)}, Pages 476-478, 2022. \\
-\textcolor{textgray}{DOI: \href{http://dx.doi.org/10.1109/GCCE56475.2022.10014070}{10.1109/GCCE56475.2022.10014070}}
+\textcolor{textgray}{J. H. Xu, S. An, L. Lyu, Y. Bai. \textit{IEEE 11th Global Conference on Consumer Electronics (GCCE)}, pp. 476--478, 2022. \href{http://dx.doi.org/10.1109/GCCE56475.2022.10014070}{doi:10.1109/GCCE56475.2022.10014070}}
 
 %-------------------------------------------------------------------------------
 %	AWARDS AND HONORS
