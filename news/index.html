@@ -27,6 +27,13 @@
 <h1>News</h1>
 
 
+<h3>September 15, 2026</h3>
+<p><strong>“Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting”</strong> (with Konstantinos Slavakis) is now on arXiv: <a href="https://arxiv.org/abs/2609.17298">arXiv:2609.17298</a>. It has been submitted to ICASSP 2027.</p>
+
+<p>This is the follow-up to <a href="https://arxiv.org/abs/2608.00053">Fast Trainable Multilinear Bases for Image Compression</a>: the same quantum Fourier transform circuits, trained this time for image inpainting rather than compression. Inpainting recovers an image from a subset of its pixels, and there the coherence of the transform with the pixel basis matters as much as its sparsity. The diagonal QFT relaxation keeps one fixed Hadamard per wire and frees only the controlled-phase gates, so its coherence is pinned at the minimum for every parameter value, by circuit topology alone. That removes the need for a coherence penalty and for Riemannian optimization: the phases are trained with plain Adam through an unrolled hard-thresholding recovery, and the transform stays exactly invertible with O(N<sup>2</sup> log N) cost.</p>
+
+<p>On DIV2K at 10% observed pixels, the diagonal model with 288 trainable parameters outperforms the DFT by 2.0 dB and the best fixed transform by 1.6 dB in PSNR, and comes within 0.2 dB of a learned butterfly factorization that carries 64 times as many parameters.</p>
+
 <h3>August 4, 2026</h3>
 <p><strong>“Fast Trainable Multilinear Bases for Image Compression”</strong> (with Zhongyi Ni, Huanhai Zhou, and Jin-Guo Liu) is now on arXiv: <a href="https://arxiv.org/abs/2608.00053">arXiv:2608.00053</a>.</p>
 
@@ -50,6 +57,6 @@
 
 
 <hr>
-<p><small>Last updated September 3, 2026.</small></p>
+<p><small>Last updated September 16, 2026.</small></p>
 </body>
 </html>

@@ -39,7 +39,7 @@ Yokohama, Kanagawa 226-8503, Japan</p>
 
 <h2 id="biography">Biography</h2>
 
-<p>I am a Ph.D. candidate at the <a href="https://www.isct.ac.jp/en">Institute of Science Tokyo</a> (formerly Tokyo Institute of Technology), where I am supervised by <a href="http://www.slavakislab.ict.e.titech.ac.jp/">Prof. Konstantinos Slavakis</a> and advised by <a href="https://www.riken.jp/en/research/labs/aip/ai_soc/ai_sec_privacy/index.html">Prof. Jun Sakuma</a>. My research focuses on the intersection of quantum computing, machine learning, and AI security.</p>
+<p>I am a Ph.D. candidate at the <a href="https://www.isct.ac.jp/en">Institute of Science Tokyo</a> (formerly Tokyo Institute of Technology), where I am supervised by <a href="http://www.slavakislab.ict.e.titech.ac.jp/">Prof. Konstantinos Slavakis</a>. My research focuses on the intersection of quantum computing and machine learning.</p>
 
 <p>I obtained my B.S. in Physics from the <a href="http://ucsd.edu">University of California, San Diego</a> and my M.S. in Experimental Particle Physics from <a href="https://atlas.kek.jp/main/news/index.html">KEK</a>.</p>
 
@@ -47,14 +47,17 @@ Yokohama, Kanagawa 226-8503, Japan</p>
 
 <p><strong>Scientific computing.</strong> <a href="https://github.com/zazabap/LogosQ">LogosQ</a> is a quantum computing library written in Rust, focused on efficient circuit simulation and optimization. Tutorials and documentation are at <a href="https://logosqbook.vercel.app/">logosqbook.vercel.app</a>. <a href="https://github.com/JuliaManifolds/ManifoldsGPU.jl">ManifoldsGPU.jl</a> brings GPU and CUDA acceleration to the <a href="https://github.com/JuliaManifolds">JuliaManifolds</a> ecosystem, so that Riemannian optimization on products of unitary and Stiefel manifolds runs on the accelerator instead of falling back to the CPU. It grew out of the training needs of <a href="/projects/1_project/">pdft</a>. Both projects are open source, and contributions are welcome.</p>
 
-<p><strong>Quantum machine learning.</strong> I am currently exploring learnable Fourier bases and parameterized tensor networks. The starting point is the quantum Fourier transform: viewed as a tensor network of one- and two-qubit gates, it becomes a family of bases whose parameters can be trained on unitary manifolds while keeping exact invertibility, near-linear transform cost, and a parameter count polylogarithmic in the signal size. In <a href="/projects/1_project/">pdft</a> (<a href="https://arxiv.org/abs/2608.00053">arXiv:2608.00053</a>) such trained bases yield more compressible image representations than the fixed DFT or DCT. I am now studying which other classical transforms admit this kind of parameterization, and what structured tensor networks offer over generic variational circuits. Earlier work in this direction proposed a <a href="https://arxiv.org/abs/2501.14185">tensor-based binary graph encoding</a> for variational quantum classifiers in resource-limited settings.</p>
-
-<p><strong>AI security.</strong> My ongoing work includes security analysis and attacks on various fine-tuned and pretrained AI models, including Llama2-7B, Llama3.1-8B-Instruct, Qwen, DeepSeek, and GPT family models. This research aims to understand and improve the robustness of large language models against adversarial attacks.</p>
+<p><strong>Quantum machine learning.</strong> I work on learnable Fourier bases and parameterized tensor networks. Viewed as a circuit of one- and two-qubit gates, the quantum Fourier transform becomes a family of bases that can be trained on unitary manifolds while keeping exact invertibility and near-linear transform cost. Trained this way, <a href="/projects/1_project/">pdft</a> compresses images better than the fixed DFT or DCT (<a href="https://arxiv.org/abs/2608.00053">arXiv:2608.00053</a>), and with the Hadamards held fixed the same circuits inpaint images with minimum coherence guaranteed by construction (<a href="https://arxiv.org/abs/2609.17298">arXiv:2609.17298</a>). Earlier work proposed a <a href="https://arxiv.org/abs/2501.14185">tensor-based binary graph encoding</a> for variational quantum classifiers.</p>
 
 <h2 id="news">News</h2>
 
 <table class="plain">
 
+
+<tr>
+<td nowrap=""><i>Sep 2026</i></td>
+<td>"Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting" got published on arXiv.</td>
+</tr>
 
 <tr>
 <td nowrap=""><i>Aug 2026</i></td>
@@ -86,6 +89,6 @@ Yokohama, Kanagawa 226-8503, Japan</p>
 <p>Details of each item are on the <a href="/news/">news page</a>.</p>
 
 <hr>
-<p><small>Last updated September 3, 2026.</small></p>
+<p><small>Last updated September 16, 2026.</small></p>
 </body>
 </html>

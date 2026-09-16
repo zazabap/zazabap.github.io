@@ -25,12 +25,14 @@
 </table>
 <hr>
 <h1>pdft</h1>
-<p><i>Trainable multilinear bases for image compression, learned by Riemannian optimization in JAX</i></p>
+<p><i>Trainable multilinear bases for image compression and inpainting, learned on the unitary manifold in JAX</i></p>
 <h2 id="overview">Overview</h2>
 
 <p><a href="https://github.com/zazabap/pdft">pdft</a> is a <strong>JAX</strong> library for learning <strong>parametric quantum Fourier transforms</strong> by manifold optimization. It replaces the fixed DFT or DCT with a basis that is trained per dataset, while keeping near-linear transform cost, exact invertibility, and a parameter count polylogarithmic in the image size.</p>
 
 <p>The core idea: optimize circuit parameters on Riemannian manifolds (products of U(2) and U(1) groups) to learn frequency-domain representations that are more compressible than the standard DFT. On Quick Draw line drawings, the trained basis stores images in roughly 20% fewer bytes than JPEG’s 8×8 block cosine transform at the same reconstruction quality.</p>
+
+<p>The same circuits, with the Hadamards frozen, are the trainable transforms of the follow-up paper on image inpainting (<a href="https://arxiv.org/abs/2609.17298">arXiv:2609.17298</a>) — see <a href="#coherence-and-image-inpainting">Coherence and image inpainting</a> below.</p>
 
 <p>pdft is the maintained implementation. It supersedes the original Julia package <a href="https://github.com/nzy1997/ParametricDFT.jl">ParametricDFT.jl</a>, which is slated for archival — see <a href="#julia-lineage">Julia lineage</a> below.</p>
 
@@ -84,6 +86,36 @@ result = pdft.train_basis(
 
 <hr />
 
+<h2 id="coherence-and-image-inpainting">Coherence and Image Inpainting</h2>
+
+<p>Compression cares only how few coefficients a basis needs. Recovering an image from a subset of its pixels — inpainting, completion, compressed sensing — is governed by a second quantity, the coherence of the basis with the pixel basis,</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>μ(U) = N max<sub>ij</sub></td>
+      <td>U<sub>ij</sub></td>
+      <td><sup>2</sup> ∈ [1, N],</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>and the number of samples needed for recovery grows linearly with it. Every basis in pdft starts at μ = 1, and there is a structural reason it can stay there: if the only non-diagonal gates are one Hadamard per wire, then</td>
+      <td>U<sub>ij</sub></td>
+      <td>= N<sup>−1/2</sup> for every parameter value, so μ = 1 identically. Training the controlled-phase gates arbitrarily hard, on any objective, cannot move it. Training the Hadamard or U(4) gates can and does.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code>pdft.coherence</code> module makes this checkable before a run rather than measured after it: <code>certify_flat_modulus</code> reports whether a basis with a given set of frozen gates keeps μ = 1 identically, and otherwise returns exactly which gates must be held fixed, in the form that <code>train_basis_batched</code> accepts.</p>
+
+<p>The paper <a href="https://arxiv.org/abs/2609.17298">Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting</a> (arXiv:2609.17298, with Konstantinos Slavakis, submitted to ICASSP 2027) builds on exactly this. With the Hadamards frozen the circuit is a diagonal relaxation of the QFT: unitary for every parameter value, O(N<sup>2</sup> log N) to apply to an N × N image, and trainable with plain Adam through an unrolled hard-thresholding recovery, with no Riemannian retractions and no coherence penalty. On DIV2K at 10% observed pixels, the model with 288 trainable phases outperforms the DFT by 2.0 dB and the best fixed transform by 1.6 dB in PSNR, and comes within 0.2 dB of a learned butterfly factorization with 64 times as many parameters. Freeing the Hadamards as well buys a further 0.2 dB, but coherence then drifts above 1 and the retractions return.</p>
+
+<hr />
+
 <h2 id="julia-lineage">Julia Lineage</h2>
 
 <p>pdft began as a port of <a href="https://github.com/nzy1997/ParametricDFT.jl">ParametricDFT.jl</a> and is a feature-complete one: parity against the Julia reference is verified by committed golden files covering training routines, I/O, and visualization. With the port complete, the Julia package is being retired in favor of pdft.</p>
@@ -124,11 +156,12 @@ result = pdft.train_basis(
 <ul>
   <li><strong>Source code:</strong> <a href="https://github.com/zazabap/pdft">github.com/zazabap/pdft</a></li>
   <li><strong>Benchmarks:</strong> <a href="https://github.com/zazabap/pdft-benchmarks">github.com/zazabap/pdft-benchmarks</a></li>
-  <li><strong>Paper:</strong> <a href="https://arxiv.org/abs/2608.00053">Fast Trainable Multilinear Bases for Image Compression (arXiv:2608.00053)</a></li>
+  <li><strong>Compression paper:</strong> <a href="https://arxiv.org/abs/2608.00053">Fast Trainable Multilinear Bases for Image Compression (arXiv:2608.00053)</a></li>
+  <li><strong>Inpainting paper:</strong> <a href="https://arxiv.org/abs/2609.17298">Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting (arXiv:2609.17298)</a></li>
   <li><strong>Julia original:</strong> <a href="https://github.com/nzy1997/ParametricDFT.jl">github.com/nzy1997/ParametricDFT.jl</a> (being archived)</li>
 </ul>
 
 <hr>
-<p><small>Last updated September 3, 2026.</small></p>
+<p><small>Last updated September 16, 2026.</small></p>
 </body>
 </html>
