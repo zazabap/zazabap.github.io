@@ -41,6 +41,15 @@
 
 <p>The implementation ships as the JAX-based Python library <a href="https://github.com/zazabap/pdft">zazabap/pdft</a>, with the benchmark suite and reproduction scripts at <a href="https://github.com/zazabap/pdft-benchmarks">zazabap/pdft-benchmarks</a>.</p>
 
+<h3>June 27, 2026</h3>
+<p><strong>“Riemannian Gauss–Newton Method for Open-System Projected Variational Quantum Dynamics”</strong> (with Konstantinos Slavakis) is accepted to the poster track of <a href="https://qce.quantum.ieee.org/2026/">IEEE Quantum Week 2026 (QCE 2026)</a>, held in Toronto, Canada, on 13–18 September 2026. The two-page proceedings paper is <a href="/assets/pdf/qce2026-riemannian-gauss-newton-pvqd.pdf">available here</a>.</p>
+
+<p>Projected variational quantum dynamics (p-VQD) refits a fixed-depth circuit to each Trotter step by maximizing a pure-state fidelity. For an open system the target is a mixed reduced state, so that objective is undefined, and the obvious repair, fitting the reduced trace overlap, is provably capped below unity: its maximizer is the dominant eigenvector rather than the target. We purify the thermal bath with a thermofield ancilla so that the joint system–bath–ancilla state stays pure. The fidelity then applies exactly on the joint state, and tracing out the bath and the ancilla afterwards returns the physical reduced dynamics.</p>
+
+<p>Each projection becomes a pure-state least-squares fit. A Riemannian Gauss–Newton inner loop with trust-region damping, whose normal matrix is the Fubini–Study metric, drives it to the ansatz ceiling in two or three iterations where first-order p-VQD stalls orders of magnitude short. On finite-temperature spin–boson and central-spin benchmarks, validated against an independent TDVP baseline, the ansatz sets the attainable fidelity and the optimizer sets the convergence rate. Where the ansatz is under-resourced, the second-order step attains the best tested fidelities.</p>
+
+<p>The JAX reference implementation is at <a href="https://github.com/zazabap/RiemannianPVQD">zazabap/RiemannianPVQD</a>.</p>
+
 <h3>April 13, 2026</h3>
 <p><strong>“Problem Reductions at Scale: Agentic Integration of Computationally Hard Problems”</strong> (with Xi-Wei Pan and Jin-Guo Liu) is now on arXiv: <a href="https://arxiv.org/abs/2604.11535">arXiv:2604.11535</a>.</p>
 
@@ -57,6 +66,6 @@
 
 
 <hr>
-<p><small>Last updated September 21, 2026.</small></p>
+<p><small>Last updated September 22, 2026.</small></p>
 </body>
 </html>
