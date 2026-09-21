@@ -5,3 +5,5 @@ _site
 vendor
 .ruby-lsp
 assets/pdf/cover-letter*
+# Renamed copies of the resume and cover letters made for job applications
+assets/pdf/Shiwen_*
