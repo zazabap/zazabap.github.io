@@ -9,6 +9,11 @@ Shiwen An, Konstantinos Slavakis.
 [Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting](https://arxiv.org/abs/2609.17298).
 arXiv:2609.17298, 2026. Submitted to ICASSP 2027.
 
+Shiwen An, Konstantinos Slavakis.
+[Riemannian Gauss–Newton Method for Open-System Projected Variational Quantum Dynamics](/assets/pdf/qce2026-riemannian-gauss-newton-pvqd.pdf).
+*IEEE International Conference on Quantum Computing and Engineering (QCE)*, Toronto, Canada, 2026. Poster track.
+\[[code](https://github.com/zazabap/RiemannianPVQD)\]
+
 Shiwen An, Zhongyi Ni, Huanhai Zhou, Jin-Guo Liu.
 [Fast Trainable Multilinear Bases for Image Compression](https://arxiv.org/abs/2608.00053).
 arXiv:2608.00053, 2026. Submitted to *Quantum*.
