@@ -3,7 +3,9 @@ title: Publications
 permalink: /publications/
 ---
 
-Newest first. See also [Google Scholar](https://scholar.google.com/citations?user=RVarZsQAAAAJ).
+Newest first within each section. See also [Google Scholar](https://scholar.google.com/citations?user=RVarZsQAAAAJ).
+
+## Quantum computing
 
 Shiwen An, Konstantinos Slavakis.
 [Quantum-Inspired Trainable and Parameter-Efficient Tensor Networks for Image Inpainting](https://arxiv.org/abs/2609.17298).
@@ -32,6 +34,8 @@ arXiv:2512.23183, 2025.
 Shiwen An, Konstantinos Slavakis.
 [Tensor-Based Binary Graph Encoding for Variational Quantum Classifiers](https://arxiv.org/abs/2501.14185).
 arXiv:2501.14185, 2025. Accepted at IEEE QCNC 2025, Nara, Japan.
+
+## High energy physics
 
 ATLAS Collaboration.
 [Combination of searches for heavy spin-1 resonances using 139 fb<sup>&minus;1</sup> of proton-proton collision data at &radic;s = 13 TeV with the ATLAS detector](https://doi.org/10.1007/JHEP04%282024%29118).
