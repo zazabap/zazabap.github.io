@@ -62,3 +62,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  # Non-content files of the qec-note submodule; its pages are copied through verbatim.
+  - qec-note/README.md
+  - qec-note/package.json
+  - qec-note/test
+  - qec-note/tools

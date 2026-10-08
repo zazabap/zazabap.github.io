@@ -1,0 +1,3 @@
+[submodule "qec-note"]
+	path = qec-note
+	url = https://github.com/zazabap/qec-note.git
