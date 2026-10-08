@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes on Quantum Error Correction - Shiwen An</title>
+<style>
+  body { max-width: 60em; margin: 1.5em auto; padding: 0 1em; overflow-wrap: break-word; }
+  img { max-width: 100%; }
+  pre { overflow-x: auto; }
+  table { border-collapse: collapse; }
+  th, td { border: 1px solid #999; padding: 2px 8px; vertical-align: top; }
+  table.plain th, table.plain td { border: none; padding: 0 1em 0.2em 0; }
+  table.plain td:last-child { padding-right: 0; }
+  .caption { font-style: italic; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<table class="plain" width="100%">
+<tr>
+<td><a href="/">Home</a> | <a href="/publications/">Publications</a> | <a href="/projects/">Projects</a> | <a href="/news/">News</a> | <a href="/assets/pdf/resume.pdf">CV</a></td>
+<td align="right"><a href="https://github.com/zazabap">GitHub</a> &middot; <a href="https://scholar.google.com/citations?user=RVarZsQAAAAJ">Google Scholar</a> &middot; <a href="mailto:an.s.aa@m.titech.ac.jp">Email</a></td>
+</tr>
+</table>
+<hr>
+<h1>Notes on Quantum Error Correction</h1>
+<p><i>A companion to Roffe's introductory guide in which the amplitudes, subspaces and syndrome circuits respond as you apply errors</i></p>
+<h2 id="overview">Overview</h2>
+
+<p><a href="/qec-note/">Notes on quantum error correction</a> follow Joschka Roffe’s
+<a href="https://arxiv.org/abs/1907.11157"><em>Quantum error correction: an introductory guide</em></a>
+(Contemporary Physics, 2019) one section at a time, then continue past it
+to CSS and quantum LDPC codes. The codes of the first parts are small enough
+to draw, so each page draws them: the amplitudes of the encoded state as bars
+grouped by subspace, the stabilizer meters reading \(+1\) or \(-1\), and the
+syndrome-extraction circuit stepped one gate at a time. Clicking a qubit
+applies an error to it and every picture on the page responds. Each part
+ends with a problem set whose solutions stay hidden until opened.</p>
+
+<h2 id="the-four-parts">The four parts</h2>
+
+<ol>
+  <li><a href="/qec-note/01-quantum-redundancy.html">Quantum redundancy and stabilizer measurement</a>
+(Roffe §3): the two- and three-qubit codes, codespace and error spaces,
+the ancilla circuit, error suppression by detection alone, and why the
+three-qubit code has distance 1.</li>
+  <li><a href="/qec-note/02-stabilizer-formalism.html">The stabilizer formalism</a>
+(Roffe §4): stabilizer measurement, the stabilizer group, logical
+operators and encoding by projection, with the \([[4,2,2]]\) detection
+code and the Shor \([[9,1,3]]\) code as worked examples.</li>
+  <li><a href="/qec-note/03-css-codes.html">CSS codes</a>: codes built from two classical
+codes, separate decoding of \(X\) and \(Z\) errors, and the Steane
+\([[7,1,3]]\) code.</li>
+  <li><a href="/qec-note/04-qldpc-codes.html">Quantum LDPC codes</a>: sparse checks, the
+hypergraph product, and belief-propagation decoding with its failure modes.</li>
+</ol>
+
+<p>Parts 3 and 4 go beyond the guide and end with references.</p>
+
+<h2 id="how-it-is-built">How it is built</h2>
+
+<ul>
+  <li>Plain HTML, one stylesheet, a few small JavaScript modules; no framework
+and no build step. The notes live in their own repository and are included
+here as a git submodule.</li>
+  <li>Two engines: a real-amplitude state vector for the pictures (at most a few
+qubits), and the binary symplectic representation of Pauli operators for
+syndromes, logical actions and distances, which keeps working for large codes.</li>
+  <li>The algebra is tested against the paper’s tables and equations with <code>node --test</code>.</li>
+</ul>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><strong>Read the notes:</strong> <a href="/qec-note/">zazabap.github.io/qec-note</a></li>
+  <li><strong>Source:</strong> <a href="https://github.com/zazabap/qec-note">github.com/zazabap/qec-note</a></li>
+  <li><strong>The paper:</strong> <a href="https://arxiv.org/abs/1907.11157">arXiv:1907.11157</a></li>
+</ul>
+
+<hr>
+<p><small>Last updated October 8, 2026.</small></p>
+</body>
+</html>
