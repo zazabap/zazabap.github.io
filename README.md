@@ -25,6 +25,7 @@ caption). The page is readable on a phone as is: a viewport meta tag,
 | `assets/pdf/resume.pdf`         | CV, linked directly from the nav                                         |
 | `_layouts/default.html`         | The only layout; nav from `nav:`, top-right links from `links:` in `_config.yml` |
 | `_layouts/post.html`            | Adds the date under a blog post title                                    |
+| `qec-note/`                     | Notes on quantum error correction: a git submodule of [zazabap/qec-note](https://github.com/zazabap/qec-note), copied through verbatim and served at `/qec-note/` |
 
 ## Build and deploy
 
@@ -43,6 +44,11 @@ changing the `Gemfile`.
 
 Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and
 pushes `_site` to the `gh-pages` branch that GitHub Pages serves.
+
+The QEC notes are a submodule, so clone with `git clone --recurse-submodules`
+(or run `git submodule update --init` in an existing clone). To publish a newer
+version of the notes, run `git -C qec-note pull origin main` and commit the
+updated submodule pointer; the workflow checks submodules out on its own.
 
 ## Conventions
 
