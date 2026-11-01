@@ -26,14 +26,16 @@ I obtained my B.S. in Physics from the [University of California, San Diego](htt
 
 ## News
 
+<div class="scroll">
 <table class="plain">
 {% assign news = site.news | sort: "date" | reverse %}
-{% for item in news limit: 6 %}
+{% for item in news %}
 <tr>
 <td nowrap><i>{{ item.date | date: "%b %Y" }}</i></td>
 <td>{{ item.title }}</td>
 </tr>
 {% endfor %}
 </table>
+</div>
 
 Details of each item are on the [news page](/news/).

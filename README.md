@@ -9,15 +9,15 @@ faculty pages: browser default fonts, black text on white, default link colours,
 no JavaScript, no icons, no dark mode, no cards or grids. All styling is the
 handful of rules inline in `_layouts/default.html`. Keep it that way: write
 plain Markdown or plain HTML; do not add frameworks, web fonts, scripts, or CSS
-classes beyond `plain` (borderless layout table) and `caption` (figure
-caption). The page is readable on a phone as is: a viewport meta tag,
+classes beyond `plain` (borderless layout table), `caption` (figure
+caption), and `scroll` (the fixed-height news box on the home page). The page is readable on a phone as is: a viewport meta tag,
 `max-width: 100%` on images, and text that reflows.
 
 ## File map
 
 | Path                            | Purpose                                                                  |
 | ------------------------------- | ------------------------------------------------------------------------ |
-| `index.md`                      | Home: contact block, biography, research, recent news                    |
+| `index.md`                      | Home: contact block, biography, research, all news in a scrolling box    |
 | `publications.md`               | Hand-written publication list, newest first (no BibTeX pipeline)         |
 | `projects.md`, `_projects/*.md` | Software project index and pages                                         |
 | `news.md`, `_news/*.md`         | Dated announcements; listed on `/` and `/news/`, no standalone pages     |
